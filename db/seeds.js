@@ -65,7 +65,7 @@ User
         soldBy: users[4]._id,
         comments: [
           {
-            content: 'Are these 100 % cotton',
+            content: 'Are these 100% cotton?',
             createdBy: users[3]._id
           },
           {
@@ -97,6 +97,7 @@ User
         title: 'Blue, off shoulders Bardot top, size UK10',
         image: 'http://images.tedbakerimages.com/row%2Fc%2FPERUI-Frill-detail-Bardot-top-Mid-Blue%2FWS7W_PERUI_MID-BLUE_1.jpg.jpg?o=QaBNJ4XhJEARRvk$NV$ABdGIIRcj&V=SjPL&w=564%26h=705%26q=85',
         price: 10,
+
         category: 'Tops',
         description: 'Worn once! True to size.',
         soldBy: users[0]._id,
@@ -106,6 +107,15 @@ User
             createdBy: users[1]._id
           }
         ]
+      },
+      {
+        title: 'Stiletto heels, size EU37',
+        image: 'https://images.pexels.com/photos/66856/women-s-shoes-red-pin-fashion-66856.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb',
+        price: 20,
+        category: 'Shoes',
+        description: 'Bought these for a wedding, but have not used them since.',
+        soldBy: users[2]._id,
+        comments: []
       }]);
   })
 
