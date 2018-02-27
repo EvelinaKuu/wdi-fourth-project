@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 import BackButton from '../utility/BackButton';
+import Comment from '../utility/Comment';
 import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
@@ -36,10 +37,22 @@ class ItemsShow extends React.Component {
         </div>
         <div className="col-md-6">
           <h3>{this.state.item.title}</h3>
-          <h3>{this.state.item.price}£</h3>
-          <h3>{this.state.item.category}</h3>
-          <h4>{this.state.item.description}</h4>
-          <h4>{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
+          <h3>Price: {this.state.item.price}£</h3>
+          <h3>Category:{this.state.item.category}</h3>
+          <h4>Description of the item:{this.state.item.description}</h4>
+          <h4>Sold by:{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
+
+          {/* <h4>Comments{this.state.item.comments && this.state.item.comments}</h4> */}
+          {this.state.item.comments && this.state.item.comments.map(comment => {
+            return(
+              <div key={comment._id} >
+                <p>{comment.content} </p>
+                <p>{comment.createdBy} </p>
+              </div>
+            );
+          })}
+          <Comment />
+
           <BackButton history={this.props.history} />
           { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit

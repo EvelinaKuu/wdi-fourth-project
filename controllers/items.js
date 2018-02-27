@@ -22,6 +22,7 @@ function itemsShow(req, res, next) {
   Item
     .findById(req.params.id)
     .populate( 'createdBy' )
+    .populate( 'comments.createdBy')
     .exec()
     .then((item) => {
       if(!item) return res.notFound();
