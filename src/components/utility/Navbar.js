@@ -10,23 +10,25 @@ const Navbar = ({ history }) => {
   }
 
   return(
-    <nav>
-      { !Auth.isAuthenticated() &&
-      <Link to="/login" className="standard-button">Login</Link>
-      }
-      {' '}
-      { !Auth.isAuthenticated() &&
-      <Link to="/register" className="standard-button">Register</Link>
-      }
-      {' '}
-      { Auth.isAuthenticated() &&
-      <a href="#" className="standard-button" onClick={logout}>Logout</a>
-      }
-      {/* {' '}
-      { Auth.isAuthenticated() &&
-      <Link to={`/user/${Auth.getPayload()}`} className="standard-button">Profile</Link>
-      } */}
-    </nav>
+    <div className="container">
+      <nav className="navbar level-right">
+        { !Auth.isAuthenticated() &&
+        <Link to="/login" className="standard-button">Login</Link>
+        }
+        {' '}
+        { !Auth.isAuthenticated() &&
+        <Link to="/register" className="standard-button">Register</Link>
+        }
+        {' '}
+        { Auth.isAuthenticated() &&
+        <a href="#" className="standard-button" onClick={logout}>Logout</a>
+        }
+        {/* {' '}
+        { Auth.isAuthenticated() &&
+        <Link to={`/user/${Auth.getPayload()}`} className="standard-button">Profile</Link>
+        } */}
+      </nav>
+    </div>
   );
 };
 

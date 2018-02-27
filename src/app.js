@@ -6,10 +6,11 @@ import ItemsRoutes from './components/items/ItemsRoutes';
 import Login       from './components/auth/Login';
 import Register    from './components/auth/Register';
 import Navbar      from './components/utility/Navbar';
+import Hero      from './components/utility/Hero';
 
 
-import 'bootstrap-css-only';
 import './scss/style.scss';
+import 'bulma/css/bulma.css';
 
 
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
           <main className="content">
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Hero />
             <ItemsRoutes
             />
           </main>

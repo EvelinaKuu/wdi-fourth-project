@@ -18,8 +18,8 @@ class ItemsIndex extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="row">
+      <div className="container">
+        <div className="columns">
           <div className="page-banner col-md-12">
             { Auth.isAuthenticated() && <Link to="/items/new" className="main-button">
               <i className="fa fa-plus" aria-hidden="true"></i>Add Item
@@ -28,9 +28,9 @@ class ItemsIndex extends React.Component {
           </div>
           {this.state.items.map(item => {
             return(
-              <div key={item.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
+              <div key={item.id} className="column">
                 <Link to={`/items/${item.id}`}>
-                  <img src={item.image} className="img-responsive" />
+                  <img src={item.image} className="" />
                 </Link>
               </div>
             );

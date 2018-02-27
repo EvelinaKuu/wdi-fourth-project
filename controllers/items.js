@@ -10,8 +10,8 @@ function itemsIndex(req, res, next) {
 
 function itemsCreate(req, res, next) {
 
-  if(req.file) req.body.image = req.file.filename;
-
+  req.body.createdBy = req.currentUser;
+  
   Item
     .create(req.body)
     .then(item => res.status(201).json(item))

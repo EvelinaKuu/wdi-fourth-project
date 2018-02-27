@@ -11,8 +11,7 @@ class ItemsNew extends React.Component {
       image: '',
       price: '',
       category: '',
-      description: '',
-      createdBy: ''
+      description: ''
     }
   };
 
@@ -30,7 +29,10 @@ class ItemsNew extends React.Component {
         {
           headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
         })
-      .then(() => this.props.history.push('/'))
+      .then(item => {
+        console.log(item);
+        this.props.history.push('/');
+      })
       .catch(err => console.log(err));
   }
 
