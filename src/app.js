@@ -29,7 +29,8 @@ class App extends React.Component {
           <main>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <ItemsRoutes />
+            <ItemsRoutes
+            />
           </main>
         </div>
       </Router>
