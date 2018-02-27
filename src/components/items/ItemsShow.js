@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 import BackButton from '../utility/BackButton';
-import Comment from '../utility/Comment';
+import CommentForm from '../utility/CommentForm';
 import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
@@ -42,7 +42,6 @@ class ItemsShow extends React.Component {
           <h4>Description of the item:{this.state.item.description}</h4>
           <h4>Sold by:{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
 
-          {/* <h4>Comments{this.state.item.comments && this.state.item.comments}</h4> */}
           {this.state.item.comments && this.state.item.comments.map(comment => {
             return(
               <div key={comment._id} >
@@ -51,7 +50,10 @@ class ItemsShow extends React.Component {
               </div>
             );
           })}
-          <Comment />
+
+          <CommentForm
+            onChange={this.handleChange}
+          />
 
           <BackButton history={this.props.history} />
           { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="standard-button">
