@@ -23,7 +23,7 @@ class App extends React.Component {
             <h2>For the <span>fashion lover</span>...</h2>
             <Navbar />
           </header>
-          <main>
+          <main className="content">
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ItemsRoutes

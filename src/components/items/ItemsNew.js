@@ -11,7 +11,8 @@ class ItemsNew extends React.Component {
       image: '',
       price: '',
       category: '',
-      description: ''
+      description: '',
+      createdBy: ''
     }
   };
 
