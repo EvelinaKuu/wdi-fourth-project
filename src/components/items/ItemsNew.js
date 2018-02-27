@@ -9,6 +9,7 @@ class ItemsNew extends React.Component {
     item: {
       title: '',
       image: '',
+      price: '',
       category: '',
       description: ''
     }
@@ -16,12 +17,13 @@ class ItemsNew extends React.Component {
 
   handleChange = ({ target: { name, value } }) => {
     const item = Object.assign({}, this.state.item, { [name]: value });
-    this.setState({ item });
+    this.setState({ item }, () => {
+      console.log(this.state);
+    });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     Axios
       .post('/api/items', this.state.item,
         {

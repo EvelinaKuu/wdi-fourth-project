@@ -21,6 +21,7 @@ function itemsCreate(req, res, next) {
 function itemsShow(req, res, next) {
   Item
     .findById(req.params.id)
+    .populate( 'createdBy' )
     .exec()
     .then((item) => {
       if(!item) return res.notFound();

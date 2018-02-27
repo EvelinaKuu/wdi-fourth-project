@@ -62,7 +62,7 @@ User
         price: 15,
         category: 'Jeans',
         description: 'Light blue jeans, never used, but wrong size.',
-        soldBy: users[4]._id,
+        createdBy: users[4]._id,
         comments: [
           {
             content: 'Are these 100% cotton?',
@@ -79,7 +79,7 @@ User
         price: 25,
         category: 'Shoes',
         description: 'Impeccable condition: only worn twice.',
-        soldBy: users[0]._id,
+        createdBy: users[0]._id,
         comments: [
           {
             content: 'Would you say these are dark brown or just brown?',
@@ -100,7 +100,7 @@ User
 
         category: 'Tops',
         description: 'Worn once! True to size.',
-        soldBy: users[0]._id,
+        createdBy: users[0]._id,
         comments: [
           {
             content: 'Soo, pretty!!!',
@@ -114,7 +114,7 @@ User
         price: 20,
         category: 'Shoes',
         description: 'Bought these for a wedding, but have not used them since.',
-        soldBy: users[2]._id,
+        createdBy: users[2]._id,
         comments: []
       }]);
   })

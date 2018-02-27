@@ -21,16 +21,18 @@ function ItemsForm({ history, handleSubmit, handleChange, item }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="image">Image</label>
+          <label htmlFor="price">Price</label>
           <input
-            type="text"
+            type="number"
             className="form-control"
-            id="image"
-            name="image"
-            value={item.image}
+            id="price"
+            name="price"
+            value={item.price}
             onChange={handleChange}
           />
         </div>
+
+
         <div className="form-group">
           <label htmlFor="category">Category</label>
           <select
@@ -41,11 +43,41 @@ function ItemsForm({ history, handleSubmit, handleChange, item }) {
             onChange={handleChange}
           >
             <option value="" disabled>Please Select</option>
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-            <option>Desert</option>
+            <option>Tops</option>
+            <option>Dresses</option>
+            <option>Skirts</option>
+            <option>Trousers</option>
+            <option>Jeans</option>
+            <option>Jackets</option>
+            <option>Coats</option>
+            <option>Shoes</option>
+            <option>Bags</option>
+            <option>Other accessories</option>
           </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="description">Description</label>
+          <textarea
+            type="text"
+            className="form-control"
+            id="description"
+            name="description"
+            maxLength="1000"
+            value={item.description}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="image">Image</label>
+          <input
+            type="text"
+            className="form-control"
+            id="image"
+            name="image"
+            value={item.image}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <button className="save-button">Save</button>

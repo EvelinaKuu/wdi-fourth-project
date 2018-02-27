@@ -10,6 +10,7 @@ class ItemsEdit extends React.Component {
     item: {
       title: '',
       image: '',
+      price: null,
       category: '',
       description: ''
     }

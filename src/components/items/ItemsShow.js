@@ -10,10 +10,10 @@ class ItemsShow extends React.Component {
     item: {}
   }
 
-  componentWillMount() {
+  componentDidMount() {
     Axios
       .get(`/api/items/${this.props.match.params.id}`)
-      .then(res => this.setState({ item: res.data }))
+      .then(res => this.setState({ item: res.data }, () => console.log(this.state)))
       .catch(err => console.log(err));
   }
 
@@ -36,7 +36,10 @@ class ItemsShow extends React.Component {
         </div>
         <div className="col-md-6">
           <h3>{this.state.item.title}</h3>
-          <h4>{this.state.item.category}</h4>
+          <h3>{this.state.item.price}£</h3>
+          <h3>{this.state.item.category}</h3>
+          <h4>{this.state.item.description}</h4>
+          <h4>{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
           <BackButton history={this.props.history} />
           { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit
