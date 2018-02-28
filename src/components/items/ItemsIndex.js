@@ -19,10 +19,10 @@ class ItemsIndex extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="columns">
+        <div className="columns is-multiline">
           {this.state.items.map(item => {
             return(
-              <div key={item.id} className="column">
+              <div key={item.id} className="column is-one-quarter">
                 <Link to={`/items/${item.id}`}>
                   <img src={item.image} className="" />
                 </Link>

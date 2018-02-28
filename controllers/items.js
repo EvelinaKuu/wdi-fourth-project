@@ -63,7 +63,6 @@ function itemsDelete(req, res, next) {
 function addCommentRoute(req, res, next) {
   console.log(req.body);
   req.body.createdBy = req.user;
-
   Item
     .findById(req.params.id)
     .exec()
