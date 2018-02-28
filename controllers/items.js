@@ -61,8 +61,8 @@ function itemsDelete(req, res, next) {
     .catch(next);
 }
 function addCommentRoute(req, res, next) {
+  req.body.createdBy = req.currentUser;
   console.log(req.body);
-  req.body.createdBy = req.user;
   Item
     .findById(req.params.id)
     .exec()
@@ -71,10 +71,11 @@ function addCommentRoute(req, res, next) {
 
       const comment = item.comments.create(req.body);
       item.comments.push(comment);
-
-      return item.save()
-        .then(() => res.json(comment));
+      console.log(item);
+      item.save();
+      return comment;
     })
+    .then(comment => res.json(comment))
     .catch(next);
 }
 

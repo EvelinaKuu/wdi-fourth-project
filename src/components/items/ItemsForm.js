@@ -1,30 +1,29 @@
 import React from 'react';
 
-import BackButton from '../utility/BackButton';
+// import BackButton from '../utility/BackButton';
 
-function ItemsForm({ history, handleSubmit, handleChange, item }) {
+function ItemsForm({  handleSubmit, handleChange, item }) {
   return (
-    <div className="row">
-      <div className="page-banner col-md-12">
-        <BackButton history={history} />
+      <div>
+        <BackButton/>
       </div>
-      <form onSubmit={handleSubmit} className="col-md-6">
-        <div className="form-group">
-          <label htmlFor="title">Title</label>
+      <form onSubmit={handleSubmit}>
+        <div className="field">
+          <label htmlFor="title" className="label">Title</label>
           <input
             type="text"
-            className="form-control"
+            className="input"
             id="title"
             name="title"
             value={item.title}
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className="field">
           <label htmlFor="price">Price</label>
           <input
             type="number"
-            className="form-control"
+            className="input"
             id="price"
             name="price"
             value={item.price}
@@ -33,34 +32,37 @@ function ItemsForm({ history, handleSubmit, handleChange, item }) {
         </div>
 
 
-        <div className="form-group">
-          <label htmlFor="category">Category</label>
-          <select
-            className="form-control"
+        <div className="field">
+          <label htmlFor="category" className="label">Category</label>
+          <div className="select"
             id="category"
             name="category"
             value={item.category}
             onChange={handleChange}
           >
-            <option value="" disabled>Please Select</option>
-            <option>Tops</option>
-            <option>Dresses</option>
-            <option>Skirts</option>
-            <option>Trousers</option>
-            <option>Jeans</option>
-            <option>Jackets</option>
-            <option>Coats</option>
-            <option>Shoes</option>
-            <option>Bags</option>
-            <option>Other accessories</option>
-          </select>
-        </div>
+            <select
+              className="input"
+            >
+              <option value="" disabled>Please Select</option>
+              <option>Tops</option>
+              <option>Dresses</option>
+              <option>Skirts</option>
+              <option>Trousers</option>
+              <option>Jeans</option>
+              <option>Jackets</option>
+              <option>Coats</option>
+              <option>Shoes</option>
+              <option>Bags</option>
+              <option>Other accessories</option>
+            </select>
+          </div>
 
-        <div className="form-group">
+
+        <div className="field">
           <label htmlFor="description">Description</label>
           <textarea
             type="text"
-            className="form-control"
+            className="message"
             id="description"
             name="description"
             maxLength="1000"
@@ -68,11 +70,11 @@ function ItemsForm({ history, handleSubmit, handleChange, item }) {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className="field">
           <label htmlFor="image">Image</label>
           <input
             type="text"
-            className="form-control"
+            className="input"
             id="image"
             name="image"
             value={item.image}
@@ -82,9 +84,9 @@ function ItemsForm({ history, handleSubmit, handleChange, item }) {
         <div>
           <button className="save-button">Save</button>
         </div>
+      </div>
       </form>
-    </div>
   );
-}
+};
 
 export default ItemsForm;

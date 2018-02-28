@@ -21,14 +21,17 @@ class ItemsIndex extends React.Component {
       <div className="container">
         <div className="columns is-multiline">
           {this.state.items.map(item => {
-            return(
-              <div key={item.id} className="column is-one-quarter">
+
+            return(<div key={item.id} className="column is-one-quarter">
+              <figure className="image is-square">
                 <Link to={`/items/${item.id}`}>
-                  <img src={item.image} className="" />
+                  <img src={item.image} className="item-image" />
                 </Link>
-              </div>
-            );
+              </figure>
+            </div>);
+
           })}
+
           { Auth.isAuthenticated() && <Link to="/items/new" className="standard-button"><i className="fas fa-plus"></i> Add your item for sale
           </Link>
           }

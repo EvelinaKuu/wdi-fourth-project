@@ -17,7 +17,9 @@ const itemSchema = mongoose.Schema({
   category: { type: String, required: true },
   description: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  comments: [ commentSchema]
+  comments: [ commentSchema ]
+}, {
+  usePushEach: true
 });
 
 itemSchema.methods.belongsTo = function belongsTo(user) {

@@ -13,6 +13,10 @@ body {
    display: block;
    height: 100px;
 }
+
+.item-image {
+  object-fit: cover;
+}
 footer {
    height: 10px;
    background-colour: #FDFDFD;

@@ -32,9 +32,7 @@ class ItemsShow extends React.Component {
   }
 
   handleChange = ({ target: { value }}) => {
-    console.log(value);
-    // const comment = Object.assign({}, this.state.comment, { value });
-    this.setState({ newComment: { value }});
+    this.setState({ newComment: { content: value }}, () => console.log(this.state.newComment));
   }
 
   handleSubmit = e => {
@@ -45,7 +43,14 @@ class ItemsShow extends React.Component {
         {
           headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
         })
-      .then((res) => console.log(res))
+      .then((res) => {
+        this.setState(prevState => {
+          const newState = prevState;
+          newState.item.comments.push(res.data);
+          newState.newComment.content = '';
+          return newState;
+        });
+      })
       .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
@@ -53,8 +58,8 @@ class ItemsShow extends React.Component {
   render() {
     return (
       <div className="columns">
-        <div className="column">
-          <img src={this.state.item.image} className="img-responsive" />
+        <div className="column is-square">
+          <img src={this.state.item.image} className="item-image" />
           <div className="field is-grouped">
             <BackButton history={this.props.history} />
             { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="button is-white">
