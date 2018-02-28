@@ -8,7 +8,10 @@ import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
   state = {
-    item: {}
+    item: {},
+    newComment: {
+      content: ''
+    }
   }
 
   componentDidMount() {
@@ -28,41 +31,65 @@ class ItemsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
+  handleChange = ({ target: { value }}) => {
+    console.log(value);
+    // const comment = Object.assign({}, this.state.comment, { value });
+    this.setState({ newComment: { value }});
+  }
+
+  handleSubmit = e => {
+    // console.log('handleSubmit works');
+    e.preventDefault();
+    Axios
+      .post(`/api/items/${this.state.item.id}/comments`, this.state.newComment,
+        {
+          headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+        })
+      .then((res) => console.log(res))
+      .catch(err => this.setState({ errors: err.response.data.errors }));
+  }
+
 
   render() {
     return (
-      <div className="row">
-        <div className="image-tile col-md-6">
+      <div className="columns">
+        <div className="column">
           <img src={this.state.item.image} className="img-responsive" />
+          <div className="field is-grouped">
+            <BackButton history={this.props.history} />
+            { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="button is-white">
+              <i className="fas fa-pencil" aria-hidden="true"></i>Edit
+            </Link> }
+            {/* <i class="fas fa-edit"></i> */}
+            {' '}
+            { Auth.isAuthenticated() && <button className="button is-white" onClick={this.deleteItem}>
+              <i className="fa fa-trash" aria-hidden="true"></i>Delete
+            </button> }
+          </div>
         </div>
-        <div className="col-md-6">
+        <div className="column">
           <h3>{this.state.item.title}</h3>
           <h3>Price: {this.state.item.price}£</h3>
           <h3>Category:{this.state.item.category}</h3>
-          <h4>Description of the item:{this.state.item.description}</h4>
-          <h4>Sold by:{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
+          <h4>Description of the item:{this.state.item.description}</h4>            <h4>Sold by:{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
+
 
           {this.state.item.comments && this.state.item.comments.map(comment => {
             return(
               <div key={comment._id} >
                 <p>{comment.content} </p>
-                <p>{comment.createdBy} </p>
+                <p>{comment.createdBy.username} </p>
               </div>
             );
           })}
 
           <CommentForm
-            onChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+            newComment={this.state.newComment}
+            // onChange={this.handleChange}
           />
 
-          <BackButton history={this.props.history} />
-          { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="standard-button">
-            <i className="fa fa-pencil" aria-hidden="true"></i>Edit
-          </Link> }
-          {' '}
-          { Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteItem}>
-            <i className="fa fa-trash" aria-hidden="true"></i>Delete
-          </button> }
         </div>
       </div>
     );

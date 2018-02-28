@@ -13,15 +13,19 @@ const Navbar = ({ history }) => {
     <div className="container">
       <nav className="navbar level-right">
         { !Auth.isAuthenticated() &&
-        <Link to="/login" className="standard-button">Login</Link>
+        <Link to="/login" className="button is-white">Login</Link>
         }
         {' '}
         { !Auth.isAuthenticated() &&
-        <Link to="/register" className="standard-button">Register</Link>
+        <Link to="/register" className="button is-white">Register</Link>
+        }
+        {' '}
+        { Auth.isAuthenticated() && <Link to="/items/new" className="button is-white">Add Item
+        </Link>
         }
         {' '}
         { Auth.isAuthenticated() &&
-        <a href="#" className="standard-button" onClick={logout}>Logout</a>
+        <a href="#" className="button is-white" onClick={logout}>Logout</a>
         }
         {/* {' '}
         { Auth.isAuthenticated() &&

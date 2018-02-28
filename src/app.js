@@ -6,7 +6,7 @@ import ItemsRoutes from './components/items/ItemsRoutes';
 import Login       from './components/auth/Login';
 import Register    from './components/auth/Register';
 import Navbar      from './components/utility/Navbar';
-// import ImageHeroBox from './components/utility/ImageHeroBox';
+import ImageHeroBox from './components/utility/ImageHeroBox';
 
 
 import './scss/style.scss';
@@ -20,20 +20,20 @@ class App extends React.Component {
       <Router>
         <div>
           <div className="container">
-          <header>
-            <h1><Link to="/" className="title is-1">Pre-loved fashion in West London</Link></h1>
-            <h2>For the <span>fashion lover</span>...</h2>
-            <Navbar />
-          </header>
-          <div className="wrapper">
-            <main className="content">
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              {/* <ImageHeroBox /> */}
-              <ItemsRoutes
-              />
-            </main>
-          </div>
+            <header>
+              <h1><Link to="/" className="title is-3">Pre-loved fashion items for sale in West London</Link></h1>
+
+              <Navbar />
+            </header>
+            <div className="wrapper">
+              <main className="content">
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <ImageHeroBox />
+                <ItemsRoutes
+                />
+              </main>
+            </div>
           </div>
           <footer className="footer"></footer>
         </div>

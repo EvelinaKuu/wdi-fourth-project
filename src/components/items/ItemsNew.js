@@ -39,7 +39,6 @@ class ItemsNew extends React.Component {
   render() {
     return (
       <ItemsForm
-        history={this.props.history}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
         item={this.state.item}

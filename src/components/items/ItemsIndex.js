@@ -20,12 +20,6 @@ class ItemsIndex extends React.Component {
     return (
       <div className="container">
         <div className="columns">
-          <div className="page-banner col-md-12">
-            { Auth.isAuthenticated() && <Link to="/items/new" className="main-button">
-              <i className="fa fa-plus" aria-hidden="true"></i>Add Item
-            </Link>
-            }
-          </div>
           {this.state.items.map(item => {
             return(
               <div key={item.id} className="column">
@@ -35,6 +29,9 @@ class ItemsIndex extends React.Component {
               </div>
             );
           })}
+          { Auth.isAuthenticated() && <Link to="/items/new" className="standard-button"><i className="fas fa-plus"></i> Add your item for sale
+          </Link>
+          }
         </div>
       </div>
     );

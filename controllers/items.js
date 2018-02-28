@@ -11,9 +11,11 @@ function itemsIndex(req, res, next) {
 function itemsCreate(req, res, next) {
 
   req.body.createdBy = req.currentUser;
-  
+
   Item
     .create(req.body)
+    // .populate( 'comments.content')
+    .populate( 'comments.createdBy')
     .then(item => res.status(201).json(item))
     .catch(next);
 }
@@ -58,11 +60,48 @@ function itemsDelete(req, res, next) {
     .then(() => res.status(204).end())
     .catch(next);
 }
+function addCommentRoute(req, res, next) {
+  console.log(req.body);
+  req.body.createdBy = req.user;
+
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+
+      const comment = item.comments.create(req.body);
+      item.comments.push(comment);
+
+      return item.save()
+        .then(() => res.json(comment));
+    })
+    .catch(next);
+}
+
+function deleteCommentRoute(req, res, next) {
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+
+      const comment = item.comments.id(req.params.commentId);
+      comment.remove();
+
+      return item.save();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 
 module.exports = {
   index: itemsIndex,
   create: itemsCreate,
   show: itemsShow,
   update: itemsUpdate,
-  delete: itemsDelete
+  delete: itemsDelete,
+  addComment: addCommentRoute,
+  deleteComment: deleteCommentRoute
 };

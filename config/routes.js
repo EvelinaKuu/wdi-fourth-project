@@ -13,11 +13,18 @@ router.route('/items/:id')
   .put(secureRoute, items.update)
   .delete(secureRoute, items.delete);
 
+router.route('/items/:id/comments')
+  .post(secureRoute, items.addComment);
+
+router.route('/items/:id/comments/:commentId')
+  .delete(secureRoute, items.deleteComment);
+
 router.route('/register')
   .post(auth.register);
 
 router.route('/login')
   .post(auth.login);
+
 router.all('/*', (req, res) => res.notFound());
 
 module.exports = router;
