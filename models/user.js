@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  firstname: { type: String, required: true },
-  lastname: { type: String, required: true },
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
+  firstname: { type: String, required: 'Please provide a first name' },
+  lastname: { type: String, required: 'Please provide a last name' },
+  username: { type: String,required: 'Please provide a user name', unique: true },
+  email: { type: String, required: 'Please provide an email address', unique: true },
   image: { type: String },
-  password: { type: String, required: true }
+  password: { type: String, required: 'Please provide a password', unique: true }
 });
 
 userSchema.virtual('items', {

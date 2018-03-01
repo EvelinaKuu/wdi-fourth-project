@@ -11,11 +11,11 @@ commentSchema.methods.belongsTo = function commentBelongsTo(user) {
 };
 
 const itemSchema = mongoose.Schema({
-  title: { type: String, required: true },
-  image: { type: String, required: true },
-  price: { type: Number, required: true },
-  category: { type: String, required: true },
-  description: { type: String, required: true },
+  title: { type: String, required: 'Please provide a title for your item'},
+  image: { type: String, required: 'Please provide an image for your item' },
+  price: { type: Number, required: 'Please provide a price for your the item'  },
+  category: { type: String, required: 'Please provide a category for your item'  },
+  description: { type: String, required: 'Please provide a description for your item'  },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   likes: [{ type: mongoose.Schema.ObjectId, ref: 'User', required: true }],
   comments: [ commentSchema ]
