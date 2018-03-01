@@ -12,14 +12,14 @@ class ItemsNew extends React.Component {
       price: '',
       category: '',
       description: ''
-    }
+    },
+    errors: {}
   };
 
   handleChange = ({ target: { name, value } }) => {
     const item = Object.assign({}, this.state.item, { [name]: value });
-    this.setState({ item }, () => {
-      console.log(this.state);
-    });
+    const errors = Object.assign({}, this.state.errors, { [name]: '' });
+    this.setState({ item, errors });
   }
 
   handleSubmit = (e) => {
@@ -33,7 +33,7 @@ class ItemsNew extends React.Component {
         console.log(item);
         this.props.history.push('/');
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {
@@ -42,6 +42,7 @@ class ItemsNew extends React.Component {
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
         item={this.state.item}
+        errors={this.state.errors}
       />
     );
   }

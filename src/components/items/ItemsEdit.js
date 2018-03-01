@@ -13,8 +13,9 @@ class ItemsEdit extends React.Component {
       price: '',
       category: '',
       description: ''
-    }
-  };
+    },
+    errors: {}
+  }
 
   componentDidMount() {
     Axios
@@ -25,7 +26,8 @@ class ItemsEdit extends React.Component {
 
   handleChange = ({ target: { name, value } }) => {
     const item = Object.assign({}, this.state.item, { [name]: value });
-    this.setState({ item });
+    const errors = Object.assign({}, this.state.errors, { [name]: '' });
+    this.setState({ item, errors });
   }
 
   handleSubmit = (e) => {
@@ -37,7 +39,7 @@ class ItemsEdit extends React.Component {
           headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
         })
       .then(res => this.props.history.push(`/items/${res.data.id}`))
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {
@@ -47,6 +49,7 @@ class ItemsEdit extends React.Component {
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
         item={this.state.item}
+        errors={this.state.errors}
       />
     );
   }

@@ -1,6 +1,9 @@
 import React from 'react';
 
-const RegisterForm = ({ handleChange, handleSubmit, user }) => {
+const RegisterForm = ({ handleChange, handleSubmit, user, errors}) => {
+
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
@@ -14,6 +17,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             value={user.firstname}
             className="input"
           />
+          {errors.firstname && <small>{errors.firstname}</small>}
         </div>
       </div>
 
@@ -29,6 +33,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             value={user.lastname}
             className="input"
           />
+          {errors.lastname && <small>{errors.lastname}</small>}
         </div>
       </div>
 
@@ -44,6 +49,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             value={user.username}
             className="input"
           />
+          {errors.username && <small>{errors.username}</small>}
         </div>
       </div>
       <div className="field">
@@ -57,6 +63,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             value={user.email}
             className="input"
           />
+          {errors.email && <small>{errors.email}</small>}
         </div>
       </div>
       <div className="field">
@@ -70,6 +77,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             value={user.password}
             className="input"
           />
+          {errors.password && <small>{errors.password}</small>}
         </div>
       </div>
       <div className="field">
@@ -83,9 +91,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
             value={user.passwordConfirmation}
             className="input"
           />
+
         </div>
       </div>
-      <button className="button is-white">Register</button>
+      <button className="button is-white" disabled={formIsInvalid}>Register</button>
     </form>
   );
 };

@@ -2,7 +2,10 @@ import React from 'react';
 
 import BackButton from '../utility/BackButton';
 
-function ItemsForm({ handleSubmit, handleChange, item }) {
+function ItemsForm({ handleSubmit, handleChange, item, errors }) {
+
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
+
   return (
     <div>
       <div>
@@ -19,6 +22,7 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
             value={item.title}
             onChange={handleChange}
           />
+          {errors.title && <small>{errors.title}</small>}
         </div>
         <div className="field">
           <label htmlFor="price">Price</label>
@@ -30,6 +34,7 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
             value={item.price}
             onChange={handleChange}
           />
+          {errors.price && <small>{errors.price}</small>}
         </div>
         <div className="field">
           <label className="label" htmlFor="category" >Category</label>
@@ -52,6 +57,7 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
               <option value="bags">Bags</option>
               <option value="other-accessories">Other accessories</option>
             </select>
+            {errors.category && <small>{errors.category}</small>}
           </div>
         </div>
         <div className="field">
@@ -66,6 +72,7 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
             onChange={handleChange}
           >
           </textarea>
+          {errors.description && <small>{errors.description}</small>}
         </div>
         <div className="field">
           <label htmlFor="image">Image</label>
@@ -77,9 +84,10 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
             value={item.image}
             onChange={handleChange}
           />
+          {errors.image && <small>{errors.image}</small>}
         </div>
         <div>
-          <button className="button is-white">Save</button>
+          <button className="button is-white" disabled={formIsInvalid}>Save</button>
         </div>
       </form>
     </div>
