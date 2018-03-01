@@ -37,21 +37,20 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
             <select
               id="category"
               name="category"
-              value={item.category}
               defaultValue="Please Select"
               onChange={handleChange}
             >
               <option disabled value="Please Select">Please select</option>
               <option value="tops">Tops</option>
-              <option>Dresses</option>
-              <option>Skirts</option>
-              <option>Trousers</option>
-              <option>Jeans</option>
-              <option>Jackets</option>
-              <option>Coats</option>
-              <option>Shoes</option>
-              <option>Bags</option>
-              <option>Other accessories</option>
+              <option value="dresses">Dresses</option>
+              <option value="skirts">Skirts</option>
+              <option value="trousers">Trousers</option>
+              <option value="jeans">Jeans</option>
+              <option value="jackets">Jackets</option>
+              <option value="coats">Coats</option>
+              <option value="shoes">Shoes</option>
+              <option value="bags">Bags</option>
+              <option value="other-accessories">Other accessories</option>
             </select>
           </div>
         </div>

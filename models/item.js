@@ -17,6 +17,7 @@ const itemSchema = mongoose.Schema({
   category: { type: String, required: true },
   description: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'User', required: true }],
   comments: [ commentSchema ]
 }, {
   usePushEach: true
@@ -39,4 +40,4 @@ itemSchema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('item', itemSchema);
+module.exports = mongoose.model('Item', itemSchema);

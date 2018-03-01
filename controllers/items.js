@@ -14,8 +14,6 @@ function itemsCreate(req, res, next) {
 
   Item
     .create(req.body)
-    // .populate( 'comments.content')
-    .populate( 'comments.createdBy')
     .then(item => res.status(201).json(item))
     .catch(next);
 }
@@ -89,12 +87,53 @@ function deleteCommentRoute(req, res, next) {
       const comment = item.comments.id(req.params.commentId);
       comment.remove();
 
-      return item.save();
+      item.save();
+      res.json(item);
     })
     .then(() => res.status(204).end())
     .catch(next);
 }
 
+function likeRoute(req, res, next) {
+
+  const userId = req.user.id;
+
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+
+      item.likes.push(userId);
+
+      return item.save();
+    })
+    .then((item) => {
+      return res.json(item);
+    })
+    .catch(next);
+}
+
+function unlikeRoute(req, res, next) {
+
+  const userId = req.user.id;
+
+  Item
+    .findById(req.params.id)
+    .exec()
+    .then((item) => {
+      if(!item) return res.notFound();
+
+      const index = item.likes.indexOf(userId);
+      item.likes.splice(index, 1);
+
+      return item.save();
+    })
+    .then((item) => {
+      return res.json(item);
+    })
+    .catch(next);
+}
 
 module.exports = {
   index: itemsIndex,
@@ -103,5 +142,7 @@ module.exports = {
   update: itemsUpdate,
   delete: itemsDelete,
   addComment: addCommentRoute,
-  deleteComment: deleteCommentRoute
+  deleteComment: deleteCommentRoute,
+  like: likeRoute,
+  unlike: unlikeRoute
 };

@@ -21,6 +21,14 @@ class ItemsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
+  // like = () => {
+  //   Axiox
+  //     .put(`/api/items/${this.props.match.params.id}`),
+  //
+  //
+  // }
+
+
   deleteItem = () => {
     Axios
       .delete(`/api/items/${this.props.match.params.id}`,
@@ -54,7 +62,15 @@ class ItemsShow extends React.Component {
       .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
-
+  deleteComment = (id) => {
+    Axios
+      .delete(`/api/items/${this.state.item.id}/comments/${id}`,
+        {
+          headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+        })
+      .then((res) => this.setState({ item: res.data}))
+      .catch(err => console.log(err));
+  }
   render() {
     return (
       <div className="columns">
@@ -78,23 +94,25 @@ class ItemsShow extends React.Component {
           <h3>Category:{this.state.item.category}</h3>
           <h4>Description of the item:{this.state.item.description}</h4>            <h4>Sold by:{this.state.item.createdBy && this.state.item.createdBy.username}</h4>
 
-
           {this.state.item.comments && this.state.item.comments.map(comment => {
             return(
               <div key={comment._id} >
                 <p>{comment.content} </p>
                 <p>{comment.createdBy.username} </p>
+
+                <button className="button is-white" onClick={() => this.deleteComment(comment._id)}>
+                  <i className="fa fa-trash" aria-hidden="true"></i>
+                </button>
+
               </div>
+
             );
           })}
-
           <CommentForm
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
             newComment={this.state.newComment}
-            // onChange={this.handleChange}
           />
-
         </div>
       </div>
     );
