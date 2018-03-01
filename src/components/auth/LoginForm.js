@@ -30,7 +30,7 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           />
         </div>
       </div>
-      <button className="main-button">Login</button>
+      <button className="button is-white">Login</button>
     </form>
   );
 };

@@ -58,7 +58,7 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
           <label htmlFor="description">Description</label>
           <textarea
             type="text"
-            className="message"
+            className="textarea"
             id="description"
             name="description"
             maxLength="1000"
@@ -79,7 +79,7 @@ function ItemsForm({ handleSubmit, handleChange, item }) {
           />
         </div>
         <div>
-          <button className="save-button">Save</button>
+          <button className="button is-white">Save</button>
         </div>
       </form>
     </div>

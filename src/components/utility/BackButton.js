@@ -6,7 +6,7 @@ const BackButton = ({ history }) => {
   return (
     <div>
       <button onClick={ history.goBack } className="button is-white">
-        <i className="fa fa-arrow-left" aria-hidden="true"></i>Back
+        <i className="fas fa-chevron-left" aria-hidden="true"></i>Back
       </button>
     </div>
   );

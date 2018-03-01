@@ -85,7 +85,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
           />
         </div>
       </div>
-      <button className="main-button">Register</button>
+      <button className="button is-white">Register</button>
     </form>
   );
 };

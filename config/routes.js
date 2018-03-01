@@ -14,7 +14,6 @@ router.route('/items/:id')
   .put(secureRoute, items.update)
   .delete(secureRoute, items.delete);
 
-
 router.route('/items/:id/like')
   .post(secureRoute, items.like);
 

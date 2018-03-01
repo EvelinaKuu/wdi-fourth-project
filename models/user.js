@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   lastname: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
+  image: { type: String },
   password: { type: String, required: true }
 });
 
@@ -13,6 +14,11 @@ userSchema.virtual('items', {
   ref: 'Item',
   localField: '_id',
   foreignField: 'createdBy'
+});
+userSchema.virtual('likes', {
+  ref: 'Item',
+  localField: '_id',
+  foreignField: 'likes'
 });
 
 userSchema.set('toJSON', {

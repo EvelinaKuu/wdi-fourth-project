@@ -32,8 +32,8 @@ function itemsShow(req, res, next) {
 }
 
 function itemsUpdate(req, res, next) {
-
-  if(req.file) req.body.image = req.file.filename;
+  delete req.body.comments;
+  delete req.body.createdBy;
 
   Item
     .findById(req.params.id)
@@ -96,10 +96,12 @@ function deleteCommentRoute(req, res, next) {
 
 function likeRoute(req, res, next) {
 
-  const userId = req.user.id;
+  const userId = req.currentUser.id;
 
   Item
     .findById(req.params.id)
+    .populate( 'comments.createdBy createdBy' )
+
     .exec()
     .then((item) => {
       if(!item) return res.notFound();
@@ -116,10 +118,11 @@ function likeRoute(req, res, next) {
 
 function unlikeRoute(req, res, next) {
 
-  const userId = req.user.id;
+  const userId = req.currentUser.id;
 
   Item
     .findById(req.params.id)
+    .populate( 'comments.createdBy createdBy' )
     .exec()
     .then((item) => {
       if(!item) return res.notFound();
