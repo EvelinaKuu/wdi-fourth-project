@@ -1,12 +1,32 @@
 import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 import Auth from '../../lib/Auth';
 
+import SortingBar from '../utility/SortingBar';
+
 class ItemsIndex extends React.Component {
   state = {
-    items: []
+    items: [],
+    sortBy: 'price',
+    sortDirection: 'desc'
+
+  }
+
+  handleSort = (e) => {
+    const [sortBy, sortDirection] = e.target.value.split('|');
+    this.setState({ sortBy, sortDirection });
+  }
+
+  sorting = () => {
+    const { sortBy, sortDirection } = this.state;
+
+    const products = _.orderBy(this.state.products, [sortBy], [sortDirection]);
+
+    return products;
+
   }
 
   componentWillMount() {
@@ -17,10 +37,14 @@ class ItemsIndex extends React.Component {
   }
 
   render() {
+    const products = this.sorting();
     return (
       <div className="container">
+        <SortingBar
+          handleSort={this.handleSort}
+        />
         <div className="columns is-multiline">
-          {this.state.items.map(item => {
+          {products.map(item => {
 
             return(<div key={item.id} className="column is-one-quarter">
               <figure className="image is-square">

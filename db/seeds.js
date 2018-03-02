@@ -16,6 +16,7 @@ User
       lastname: 'Vincent',
       username: 'maddie87',
       email: 'maddie@hotmail.com',
+      image: '../src/assets/images/users/User-0.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -24,6 +25,7 @@ User
       lastname: 'Bishop',
       username: 'nancy75',
       email: 'nancy.bishop@hotmail.com',
+      image: '../src/assets/images/users/User-1.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -31,6 +33,7 @@ User
       lastname: 'Morgan',
       username: 'nicky_notting_hill',
       email: 'nicky_morgan@hotmail.com',
+      image: '../src/assets/images/users/User-2.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -39,6 +42,7 @@ User
       lastname: 'West',
       username: 'QueenVictoria',
       email: 'vicky.west@hotmail.com',
+      image: '../src/assets/images/users/User-3.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -47,6 +51,95 @@ User
       lastname: 'Smith',
       username: 'msSmith',
       email: 'hanna.smith@hotmail.com',
+      image: '../src/assets/images/users/User-4.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Max',
+      lastname: 'Schmidt',
+      username: 'evergreen72',
+      email: 'evergreen72@hotmail.com',
+      image: '../src/assets/images/users/User-5.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Lilian',
+      lastname: 'Norris',
+      username: 'LilyOfTheValley',
+      email: 'lily@hotmail.com',
+      image: '../src/assets/images/users/User-6.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Felicia',
+      lastname: 'Anderson',
+      username: 'FeliciaA',
+      email: 'felicia-1985@hotmail.com',
+      image: '../src/assets/images/users/User-7.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Andrea',
+      lastname: 'Nordstrom',
+      username: 'AndreaNordstrom',
+      email: 'andrea.nordstrom@hotmail.com',
+      image: '../src/assets/images/users/User-8.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Anna',
+      lastname: 'Bergqvist',
+      username: 'AnnaB',
+      email: 'anna.bergqvist@hotmail.com',
+      image: '../src/assets/images/users/User-9.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Heidi',
+      lastname: 'Flores',
+      username: 'Flores-72',
+      email: 'heidi.flores@hotmail.com',
+      image: '../src/assets/images/users/User-10.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Miranda',
+      lastname: 'Kevin',
+      username: 'Miranda_Kevin',
+      email: 'miranda.kevin@hotmail.com',
+      image: '../src/assets/images/users/User-11.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Eva',
+      lastname: 'Ferrero',
+      username: 'Eva-loves-Ted-Baker',
+      email: 'eva.ferrero@hotmail.com',
+      image: '../src/assets/images/users/User-12.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Malin',
+      lastname: 'Vikstrom',
+      username: 'MalinV',
+      email: 'malin.vikstrom@hotmail.com',
+      image: '../src/assets/images/users/User-13.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Emily',
+      lastname: 'Combs',
+      username: 'EmilyC',
+      email: 'emily.combs@hotmail.com',
+      image: '../src/assets/images/users/User-14.png',
+      password: 'password',
+      passwordConfirmation: 'password'
+    },{
+      firstname: 'Evelyn',
+      lastname: 'Anderson',
+      username: 'EA-79',
+      email: 'evelyn79anderson@hotmail.com',
+      image: '../src/assets/images/users/User-15.png',
       password: 'password',
       passwordConfirmation: 'password'
     }
@@ -58,7 +151,7 @@ User
     return Item
       .create([{
         title: 'Levis jeans, size 30',
-        image: 'https://images.unsplash.com/photo-1475178626620-a4d074967452?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=400fdb95a936d87251532ccc05720cec&auto=format&fit=crop&w=800&q=60',
+        image: '../src/assets/images/items/jeans-1.png',
         price: 15,
         category: 'Jeans',
         description: 'Light blue jeans, never used, but wrong size.',
