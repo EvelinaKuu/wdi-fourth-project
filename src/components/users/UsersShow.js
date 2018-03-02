@@ -17,7 +17,7 @@ class UsersShow extends React.Component {
     Axios
       .get(`/api/users/${this.props.match.params.id}`)
       .then(res => {
-        this.setState({ user: res.data }, () => console.log(res.data));
+        this.setState({ user: res.data });
       })
       .catch(err => console.log(err));
   }
@@ -27,7 +27,7 @@ class UsersShow extends React.Component {
       .delete(`/api/items/${this.props.match.params.id}/unlike`, {
         headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
       })
-      .then(res => this.setState({ item: res.data }, () => console.log(this.state)))
+      .then(res => this.setState({ item: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -49,9 +49,9 @@ class UsersShow extends React.Component {
               {this.state.user.likes && this.state.user.likes.map(like => {
                 return(
                   <div key={like.id} >
-                    {/* <Link to={`/items/${item.id}`}> */}
-                    <img src={like.image} className="item-image" />
-                    {/* </Link> */}
+                    <Link to={`/items/${this.state.user.likes.item.id}`}>
+                      <img src={like.image} className="item-image" />
+                    </Link>
                     <p>{like.title} </p>
                   </div>
                 );

@@ -17,7 +17,7 @@ class ItemsShow extends React.Component {
   componentDidMount() {
     Axios
       .get(`/api/items/${this.props.match.params.id}`)
-      .then(res => this.setState({ item: res.data }, () => console.log(res.data)))
+      .then(res => this.setState({ item: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -119,7 +119,7 @@ class ItemsShow extends React.Component {
 
         <div className="column">
           <h3>{this.state.item.title}</h3>
-          <h3>Price: {this.state.item.price}£</h3>
+          <h3>Price: £{this.state.item.price}</h3>
           <h3>Category:{this.state.item.category}</h3>
           <h4>Description of the item:{this.state.item.description}</h4>
           {this.state.item.createdBy && <p><a href={`mailto:${this.state.item.createdBy.email}`}>Send email to seller</a></p>}
