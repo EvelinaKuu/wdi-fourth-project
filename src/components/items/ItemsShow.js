@@ -17,7 +17,7 @@ class ItemsShow extends React.Component {
   componentDidMount() {
     Axios
       .get(`/api/items/${this.props.match.params.id}`)
-      .then(res => this.setState({ item: res.data }))
+      .then(res => this.setState({ item: res.data }, () => console.log(this.state)))
       .catch(err => console.log(err));
   }
 
@@ -75,6 +75,7 @@ class ItemsShow extends React.Component {
       .catch(err => console.log(err));
   }
   render() {
+    console.log(this.state.item.likes);
     return (
       <div className="columns">
         <div className="column is-square">
@@ -94,25 +95,17 @@ class ItemsShow extends React.Component {
               <i className="fa fa-trash" aria-hidden="true"></i>Delete
             </button> }
 
+
+
+
+
             { Auth.isAuthenticated() &&
-
-            //   { Auth.getPayload().userId === this.state.likes.user.id ?
-            //   (
-            //
-            //     <button className="button is-white" onClick={this.likeItem} >
-            //       <i className="fas fa-heart"></i>
-            //     </button>
-            //
-            //
-            //   )
-            //   :
-            //   (<p>Log in to like this item</p>)
-            // }
-
-
-            <button className="button is-white" onClick={this.likeItem} >
-              <i className="fas fa-heart"></i>
-            </button> }
+              this.state.item.likes &&
+              this.state.item.likes.every(like => like !== Auth.getPayload().userId) &&
+              <button className="button is-white" onClick={this.likeItem} >
+                <i className="fas fa-heart"></i>
+              </button>
+            }
 
           </div>
         </div>

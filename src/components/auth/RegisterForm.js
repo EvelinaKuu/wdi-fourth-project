@@ -91,7 +91,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors}) => {
             value={user.passwordConfirmation}
             className="input"
           />
-
+          {errors.passwordConfirmation &&  <small>{errors.passwordConfirmation}</small>}
         </div>
       </div>
       <button className="button is-white" disabled={formIsInvalid}>Register</button>
