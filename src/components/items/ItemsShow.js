@@ -28,6 +28,7 @@ class ItemsShow extends React.Component {
         headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
       })
       .then(res => this.setState({ item: res.data }))
+      // check if the currentUser is logged in and if his likes is in the array of likes hide button
       .catch(err => console.log(err));
   }
 
@@ -94,7 +95,22 @@ class ItemsShow extends React.Component {
             </button> }
 
             { Auth.isAuthenticated() &&
-            <button className="button is-white" onClick={this.likeItem}>
+
+            //   { Auth.getPayload().userId === this.state.likes.user.id ?
+            //   (
+            //
+            //     <button className="button is-white" onClick={this.likeItem} >
+            //       <i className="fas fa-heart"></i>
+            //     </button>
+            //
+            //
+            //   )
+            //   :
+            //   (<p>Log in to like this item</p>)
+            // }
+
+
+            <button className="button is-white" onClick={this.likeItem} >
               <i className="fas fa-heart"></i>
             </button> }
 

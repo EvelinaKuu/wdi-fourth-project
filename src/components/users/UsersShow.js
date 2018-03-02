@@ -48,8 +48,10 @@ class UsersShow extends React.Component {
               <h3>{this.state.user.email}</h3>
               {this.state.user.likes && this.state.user.likes.map(like => {
                 return(
-                  <div key={like._id} >
+                  <div key={like.id} >
+                    {/* <Link to={`/items/${item.id}`}> */}
                     <img src={like.image} className="item-image" />
+                    {/* </Link> */}
                     <p>{like.title} </p>
                   </div>
                 );
@@ -64,7 +66,9 @@ class UsersShow extends React.Component {
               {this.state.user.items && this.state.user.items.map(item => {
                 return(
                   <div key={item.id} >
-                    <img src={item.image} className="item-image"/>
+                    <Link to={`/items/${item.id}`}>
+                      <img src={item.image} className="item-image"/>
+                    </Link>
                     <p>{item.title} </p>
                   </div>
                 );

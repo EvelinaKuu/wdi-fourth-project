@@ -11,7 +11,8 @@ class ItemsIndex extends React.Component {
   state = {
     items: [],
     sortBy: 'price',
-    sortDirection: 'desc'
+    sortDirection: 'asc',
+    query: ''
 
   }
 
@@ -20,10 +21,16 @@ class ItemsIndex extends React.Component {
     this.setState({ sortBy, sortDirection });
   }
 
-  sorting = () => {
-    const { sortBy, sortDirection } = this.state;
+  handleSearch = (e) => {
+    // console.log(e.target.value);
+    this.setState({query: e.target.value}, () => console.log(this.state) );
+  }
 
-    const products = _.orderBy(this.state.products, [sortBy], [sortDirection]);
+  sorting = () => {
+    const { sortBy, sortDirection, query } = this.state;
+    const regex = new RegExp(query, 'i');
+    const orderedProducts = _.orderBy(this.state.items, [sortBy], [sortDirection]);
+    const products = _.filter(orderedProducts, (item) => regex.test(item.category));
 
     return products;
 
@@ -42,8 +49,11 @@ class ItemsIndex extends React.Component {
       <div className="container">
         <SortingBar
           handleSort={this.handleSort}
+          handleSearch={this.handleSearch}
         />
         <div className="columns is-multiline">
+
+
           {products.map(item => {
 
             return(<div key={item.id} className="column is-one-quarter">

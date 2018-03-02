@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import ItemsRoutes from './components/items/ItemsRoutes';
+import ProtectedRoute from './components/utility/ProtectedRoute';
 import UsersShow       from './components/users/UsersShow';
 import Login       from './components/auth/Login';
 import Register    from './components/auth/Register';
@@ -29,7 +30,7 @@ class App extends React.Component {
             <div className="wrapper">
               <main className="content">
                 <ImageHeroBox />
-                <Route path="/users/:id" component={UsersShow} />
+                <ProtectedRoute path="/users/:id" component={UsersShow} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
 

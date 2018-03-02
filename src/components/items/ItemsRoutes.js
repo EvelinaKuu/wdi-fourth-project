@@ -7,7 +7,6 @@ import ItemsIndex from './ItemsIndex';
 import ItemsShow from  './ItemsShow';
 import ItemsNew from './ItemsNew';
 import ItemsEdit from './ItemsEdit';
-import UsersShow from '../users/UsersShow';
 
 const ItemsRoutes = () => {
   return (
@@ -15,7 +14,6 @@ const ItemsRoutes = () => {
       <Route exact path="/" component={ItemsIndex} />
       <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
       <ProtectedRoute path="/items/new" component={ItemsNew} />
-      <ProtectedRoute path="/users/:id" component={UsersShow} />
       <Route path="/items/:id" component={ItemsShow} />
     </Switch>
   );

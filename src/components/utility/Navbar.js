@@ -30,10 +30,7 @@ const Navbar = ({ history }) => {
         { Auth.isAuthenticated() &&
         <a href="#" className="button is-white" onClick={logout}>Logout</a>
         }
-        {/* {' '}
-        { Auth.isAuthenticated() &&
-        <Link to={`/user/${Auth.getPayload()}`} className="standard-button">Profile</Link>
-        } */}
+      
       </nav>
     </div>
   );
