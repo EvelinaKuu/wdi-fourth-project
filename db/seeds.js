@@ -16,7 +16,7 @@ User
       lastname: 'Vincent',
       username: 'maddie87',
       email: 'maddie@hotmail.com',
-      image: 'assets/images/users/User-0.png',
+      image: '/assets/images/users/User-0.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -25,7 +25,7 @@ User
       lastname: 'Bishop',
       username: 'nancy75',
       email: 'nancy.bishop@hotmail.com',
-      image: 'assets/images/users/User-1.png',
+      image: '/assets/images/users/User-1.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -33,7 +33,7 @@ User
       lastname: 'Morgan',
       username: 'nicky_notting_hill',
       email: 'nicky_morgan@hotmail.com',
-      image: 'assets/images/users/User-2.png',
+      image: '/assets/images/users/User-2.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -42,7 +42,7 @@ User
       lastname: 'West',
       username: 'QueenVictoria',
       email: 'vicky.west@hotmail.com',
-      image: 'assets/images/users/User-3.png',
+      image: '/assets/images/users/User-3.png',
       password: 'password',
       passwordConfirmation: 'password'
     },
@@ -51,7 +51,7 @@ User
       lastname: 'Smith',
       username: 'msSmith',
       email: 'hanna.smith@hotmail.com',
-      image: 'assets/images/users/User-4.png',
+      image: '/assets/images/users/User-4.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -59,7 +59,7 @@ User
       lastname: 'Schmidt',
       username: 'evergreen72',
       email: 'evergreen72@hotmail.com',
-      image: 'assets/images/users/User-5.png',
+      image: '/assets/images/users/User-5.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -67,7 +67,7 @@ User
       lastname: 'Norris',
       username: 'LilyOfTheValley',
       email: 'lily@hotmail.com',
-      image: 'assets/images/users/User-6.png',
+      image: '/assets/images/users/User-6.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -75,7 +75,7 @@ User
       lastname: 'Anderson',
       username: 'FeliciaA',
       email: 'felicia-1985@hotmail.com',
-      image: 'assets/images/users/User-7.png',
+      image: '/assets/images/users/User-7.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -83,7 +83,7 @@ User
       lastname: 'Nordstrom',
       username: 'AndreaNordstrom',
       email: 'andrea.nordstrom@hotmail.com',
-      image: 'assets/images/users/User-8.png',
+      image: '/assets/images/users/User-8.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -91,7 +91,7 @@ User
       lastname: 'Bergqvist',
       username: 'AnnaB',
       email: 'anna.bergqvist@hotmail.com',
-      image: 'assets/images/users/User-9.png',
+      image: '/assets/images/users/User-9.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -99,7 +99,7 @@ User
       lastname: 'Flores',
       username: 'Flores-72',
       email: 'heidi.flores@hotmail.com',
-      image: 'assets/images/users/User-10.png',
+      image: '/assets/images/users/User-10.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -107,7 +107,7 @@ User
       lastname: 'Kevin',
       username: 'Miranda_Kevin',
       email: 'miranda.kevin@hotmail.com',
-      image: 'assets/images/users/User-11.png',
+      image: '/assets/images/users/User-11.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -115,7 +115,7 @@ User
       lastname: 'Ferrero',
       username: 'Eva-loves-Ted-Baker',
       email: 'eva.ferrero@hotmail.com',
-      image: 'assets/images/users/User-12.png',
+      image: '/assets/images/users/User-12.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -123,7 +123,7 @@ User
       lastname: 'Vikstrom',
       username: 'MalinV',
       email: 'malin.vikstrom@hotmail.com',
-      image: 'assets/images/users/User-13.png',
+      image: '/assets/images/users/User-13.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -131,7 +131,7 @@ User
       lastname: 'Combs',
       username: 'EmilyC',
       email: 'emily.combs@hotmail.com',
-      image: 'assets/images/users/User-14.png',
+      image: '/assets/images/users/User-14.png',
       password: 'password',
       passwordConfirmation: 'password'
     },{
@@ -139,7 +139,7 @@ User
       lastname: 'Anderson',
       username: 'EA-79',
       email: 'evelyn79anderson@hotmail.com',
-      image: 'assets/images/users/User-15.png',
+      image: '/assets/images/users/User-15.png',
       password: 'password',
       passwordConfirmation: 'password'
     }
@@ -151,7 +151,7 @@ User
     return Item
       .create([{
         title: 'Levis jeans, size 26',
-        image: 'assets/images/items/jeans-1.png',
+        image: '/assets/images/items/jeans-1.png',
         price: 15,
         category: 'Jeans',
         description: 'Light blue jeans, never used, bought wrong size.',
@@ -168,7 +168,7 @@ User
         ]
       },{
         title: 'Levis jeans, size 30',
-        image: 'assets/images/items/black-levis.png',
+        image: '/assets/images/items/black-levis.png',
         price: 17,
         category: 'Jeans',
         description: 'Brown, never used, but wrong size.',
@@ -180,7 +180,7 @@ User
           }
         ]
       },{ title: 'Hunter boots, size 6',
-        image: 'assets/images/items/hunter-black.png',
+        image: '/assets/images/items/hunter-black.png',
         price: 15,
         category: 'Shoes',
         description: 'Black Hunter boots, used but still in a pretty good shape.',
@@ -197,7 +197,7 @@ User
         ]
       },{
         title: 'Brown Converse shoes size 5.5',
-        image: 'assets/images/items/brown-leather-converse.png',
+        image: '/assets/images/items/brown-leather-converse.png',
         price: 25,
         category: 'Shoes',
         description: 'Impeccable condition: only worn twice.',
@@ -217,7 +217,7 @@ User
         ]
       }, {
         title: 'Blue, off shoulders Bardot top, size UK10',
-        image: 'assets/images/items/top-blue.png',
+        image: '/assets/images/items/top-blue.png',
         price: 10,
 
         category: 'Tops',
@@ -231,7 +231,7 @@ User
         ]
       },{
         title: 'Purple velvet dress, size 8',
-        image: 'assets/images/items/sandro-velvet-dress.png',
+        image: '/assets/images/items/sandro-velvet-dress.png',
         price: 40,
         category: 'Dresses',
         description: 'Purple velvet dress by Sandro, size 8.',
@@ -246,7 +246,7 @@ User
           }]
       },{
         title: 'Leather buckle belt',
-        image: 'assets/images/items/leather-buckle-belt.png',
+        image: '/assets/images/items/leather-buckle-belt.png',
         price: 10,
         category: 'Other accessiories',
         description: 'Vintage belt',
@@ -259,7 +259,7 @@ User
         ]
       },{
         title: 'Moschino dress, size M',
-        image: 'assets/images/items/moschino-dress.png',
+        image: '/assets/images/items/moschino-dress.png',
         price: 50,
         category: 'Dresses',
         description: 'My little pony themed dress, size M, original price 370. 100% cotton, short sleeves ',
@@ -268,7 +268,7 @@ User
         ]
       },{
         title: 'Whistles leather skirt, size XS',
-        image: 'assets/images/items/whistles-black.png',
+        image: '/assets/images/items/whistles-black.png',
         price: 50,
         category: 'Skirts',
         description: 'A-line weather skirt',
@@ -277,7 +277,7 @@ User
         ]
       },{
         title: 'Denim skirt, size EU38',
-        image: 'assets/images/items/missguided-denim.png',
+        image: '/assets/images/items/missguided-denim.png',
         price: 10,
         category: 'Skirts',
         description: 'Denim skirt, high-rise, five pockets',
@@ -286,7 +286,7 @@ User
         ]
       },{
         title: 'Escada check trousers, size EU38',
-        image: 'assets/images/items/escada-check.png',
+        image: '/assets/images/items/escada-check.png',
         price: 30,
         category: 'Trousers',
         description: 'Ankle-length trousers',
@@ -294,7 +294,7 @@ User
         comments: []
       },{
         title: 'Skinny, leather trousers, size FR36',
-        image: 'assets/images/items/skinny.png',
+        image: '/assets/images/items/skinny.png',
         price: 60,
         category: 'Trousers',
         description: 'High-waist, skinny leather trousers, press studd details on the ankles.',
@@ -307,7 +307,7 @@ User
         ]
       },{
         title: 'Trench coat',
-        image: 'assets/images/items/trench-coat-blue.png',
+        image: '/assets/images/items/trench-coat-blue.png',
         price: 30,
         category: 'Coats',
         description: 'Blue trench coat. Size 8.',
@@ -320,7 +320,7 @@ User
         ]
       },{
         title: 'Brown leather bag',
-        image: 'assets/images/items/zara-brown.png',
+        image: '/assets/images/items/zara-brown.png',
         price: 20,
         category: 'Bags',
         description: 'Mid-brown leather bag',
@@ -333,7 +333,7 @@ User
         ]
       },{
         title: 'Vintage bucket bag',
-        image: 'assets/images/items/vintage-bucket-bag.png',
+        image: '/assets/images/items/vintage-bucket-bag.png',
         price: 20,
         category: 'Bags',
         description: '100% jute',
@@ -341,7 +341,7 @@ User
         comments: []
       },{
         title: 'High UGG boots',
-        image: 'assets/images/items/ugg-classic.png',
+        image: '/assets/images/items/ugg-classic.png',
         price: 20,
         category: 'Shoes',
         description: 'Mid-brown, classic high Uggs. I used them for one winter, but got new ones now. Size is EU36.',
@@ -349,7 +349,7 @@ User
         comments: []
       },{
         title: 'A Dickies fleece coat',
-        image: 'assets/images/items/fleece-coat-dickies.png',
+        image: '/assets/images/items/fleece-coat-dickies.png',
         price: 20,
         category: 'Coats',
         description: 'Off-white fleece coat with black-white camo details. Size M.',
@@ -363,7 +363,7 @@ User
       },
       {
         title: 'Stiletto heels, size EU37',
-        image: 'assets/images/items/red-stilettos.png',
+        image: '/assets/images/items/red-stilettos.png',
         price: 20,
         category: 'Shoes',
         description: 'Bought these for a wedding, but have not used them since.',
