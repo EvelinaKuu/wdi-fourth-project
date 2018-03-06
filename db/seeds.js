@@ -243,7 +243,8 @@ User
           },{
             content: 'Definitely! I ware size 8 and it fits me perfectly!.',
             createdBy: users[8]._id
-          },{
+          }]
+      },{
         title: 'Leather buckle belt',
         image: '../src/assets/images/items/leather-buckle-belt.png',
         price: 10,
@@ -266,45 +267,44 @@ User
         comments: [
         ]
       },{
-          title: 'Whistles leather skirt, size XS',
-          image: '../src/assets/images/items/whistles-black.png',
-          price: 50,
-          category: 'Skirts',
-          description: 'A-line weather skirt',
-          createdBy: users[8]._id,
-          comments: [
-          ]
-        },{
-          title: 'Denim skirt, size EU38',
-          image: '../src/assets/images/items/missguided-denim.png',
-          price: 10,
-          category: 'Skirts',
-          description: 'Denim skirt, high-rise, five pockets',
-          createdBy: users[7]._id,
-          comments: [
-          ]
-        },{
-          title: 'Escada check trousers, size EU38',
-          image: '../src/assets/images/items/escada-check.png',
-          price: 30,
-          category: 'Trousers',
-          description: 'Ankle-length trousers',
-          createdBy: users[7]._id,
-          comments: [
-            ]
-        },{
-          title: 'Skinny, leather trousers, size FR36',
-          image: '../src/assets/images/items/skinny.png',
-          price: 60,
-          category: 'Trousers',
-          description: 'High-waist, skinny leather trousers, press studd details on the ankles.',
-          createdBy: users[4]._id,
-          comments: [
-            {
-              content: 'Could I try these on before buying?',
-              createdBy: users[8]._id
-            }
-          ]
+        title: 'Whistles leather skirt, size XS',
+        image: '../src/assets/images/items/whistles-black.png',
+        price: 50,
+        category: 'Skirts',
+        description: 'A-line weather skirt',
+        createdBy: users[8]._id,
+        comments: [
+        ]
+      },{
+        title: 'Denim skirt, size EU38',
+        image: '../src/assets/images/items/missguided-denim.png',
+        price: 10,
+        category: 'Skirts',
+        description: 'Denim skirt, high-rise, five pockets',
+        createdBy: users[7]._id,
+        comments: [
+        ]
+      },{
+        title: 'Escada check trousers, size EU38',
+        image: '../src/assets/images/items/escada-check.png',
+        price: 30,
+        category: 'Trousers',
+        description: 'Ankle-length trousers',
+        createdBy: users[7]._id,
+        comments: []
+      },{
+        title: 'Skinny, leather trousers, size FR36',
+        image: '../src/assets/images/items/skinny.png',
+        price: 60,
+        category: 'Trousers',
+        description: 'High-waist, skinny leather trousers, press studd details on the ankles.',
+        createdBy: users[4]._id,
+        comments: [
+          {
+            content: 'Could I try these on before buying?',
+            createdBy: users[8]._id
+          }
+        ]
       },{
         title: 'Trench coat',
         image: '../src/assets/images/items/trench-coat-blue.png',
@@ -338,8 +338,7 @@ User
         category: 'Bags',
         description: '100% jute',
         createdBy: users[9]._id,
-        comments: [
-        ]
+        comments: []
       },{
         title: 'High UGG boots',
         image: '../src/assets/images/items/ugg-classic.png',
@@ -347,8 +346,7 @@ User
         category: 'Shoes',
         description: 'Mid-brown, classic high Uggs. I used them for one winter, but got new ones now. Size is EU36.',
         createdBy: users[6]._id,
-        comments: [
-        ]
+        comments: []
       },{
         title: 'A Dickies fleece coat',
         image: '../src/assets/images/items/fleece-coat-dickies.png',
