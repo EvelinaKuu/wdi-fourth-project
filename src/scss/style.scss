@@ -13,10 +13,26 @@ body {
    display: block;
    height: 100px;
 }
+.hero-body {
+  box-sizing: inherit;
+
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
 
 .item-image {
   object-fit: cover;
   max-width: 200px;
+  max-height: auto;
+}
+
+.item-display {
+  max-width: 400px;
   max-height: auto;
 }
 footer {

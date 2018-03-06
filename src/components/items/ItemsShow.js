@@ -78,8 +78,8 @@ class ItemsShow extends React.Component {
     console.log(this.state.item.likes);
     return (
       <div className="columns">
-        <div className="column is-square">
-          <img src={this.state.item.image} className="item-image" />
+        <div className="column is-quarter">
+          <img src={this.state.item.image} className="item-display" />
           <p>Likes: { this.state.item.likes && this.state.item.likes.length } </p>
           <div className="field is-grouped">
             <BackButton history={this.props.history} />

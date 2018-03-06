@@ -22,12 +22,21 @@ class UsersShow extends React.Component {
       .catch(err => console.log(err));
   }
 
-  unlikeItem = () => {
+  unlikeItem = (like) => {
     Axios
-      .delete(`/api/items/${this.props.match.params.id}/unlike`, {
+      .delete(`/api/items/${like.id}/unlike`, {
         headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
       })
-      .then(res => this.setState({ item: res.data }))
+      .then(() => {
+        const likes = this.state.user.likes.filter(({ id }) => {
+          return id !== like.id;
+        });
+
+        const user = this.state.user;
+        user.likes = likes;
+
+        this.setState({ user });
+      })
       .catch(err => console.log(err));
   }
 
@@ -68,7 +77,7 @@ class UsersShow extends React.Component {
                   })}
         </div>
 
-        {this.state.user.likes &&
+        {this.state.user.likes && this.state.user.likes.length > 0 &&
         <div className="container is-widescreen">
           <h3>Liked these items: </h3>
         </div>
@@ -85,6 +94,12 @@ class UsersShow extends React.Component {
                   <img src={like.image} className="item-image" />
                 </Link>
                 <p>{like.title} </p>
+                { Auth.isAuthenticated() &&
+                    Auth.getPayload().userId === this.props.match.params.id &&
+                    <button className="button is-white" onClick={() => this.unlikeItem(like)}>
+                      Remove like
+                    </button> }
+
               </div>
 
 
@@ -99,11 +114,7 @@ class UsersShow extends React.Component {
               } */}
 
 
-          {/* { Auth.isAuthenticated() &&
-              Auth.getPayload().userId === 99
-              <button className="button is-white" onClick={this.unlikeItem}>
-                Remove like
-              </button> } */}
+
         </div>
       </div>
 

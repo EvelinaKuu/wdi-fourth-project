@@ -23,8 +23,6 @@ class App extends React.Component {
         <div>
           <div className="container">
             <header>
-              <h1><Link to="/" className="title is-3">Pre-loved fashion items for sale in West London</Link></h1>
-
               <Navbar />
             </header>
             <div className="wrapper">

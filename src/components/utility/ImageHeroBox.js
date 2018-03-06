@@ -2,18 +2,18 @@ import React from 'react';
 
 const ImageHeroBox = () => {
   return (
-    <div>
-      <section className="hero">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">
-              Pre-loved
-            </h1>
-            <img src="/assets/images/hero.jpg" />
-          </div>
+    <section className="hero" style={{ backgroundImage: 'url("../assets/images/hero.jpg")'}}>
+      <div className="hero-body">
+        <div className="container">
+          <h1 className="title is-1">
+            Pre-loved
+          </h1>
+          <h2 className="subtitle is-3">
+            Pre-loved fashion items for sale in West London
+          </h2>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
