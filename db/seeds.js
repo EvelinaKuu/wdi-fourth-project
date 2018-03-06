@@ -154,7 +154,7 @@ User
         image: '../src/assets/images/items/jeans-1.png',
         price: 15,
         category: 'Jeans',
-        description: 'Light blue jeans, never used, but wrong size.',
+        description: 'Light blue jeans, never used, bought wrong size.',
         createdBy: users[4]._id,
         comments: [
           {
@@ -166,9 +166,22 @@ User
             createdBy: users[4]._id
           }
         ]
+      },{
+        title: 'Levis jeans, size 30',
+        image: '../src/assets/images/items/black-levis.png',
+        price: 17,
+        category: 'Jeans',
+        description: 'Brown, never used, but wrong size.',
+        createdBy: users[9]._id,
+        comments: [
+          {
+            content: 'How stretchy are these?',
+            createdBy: users[10]._id
+          }
+        ]
       }, {
         title: 'Brown Converse shoes size 5.5',
-        image: 'https://images.unsplash.com/photo-1494496195158-c3becb4f2475?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e07cdfda9c9ead392d048eb1fd8f75a9&auto=format&fit=crop&w=800&q=60',
+        image: '../src/assets/images/items/brown-leather-converse.png',
         price: 25,
         category: 'Shoes',
         description: 'Impeccable condition: only worn twice.',
@@ -188,7 +201,7 @@ User
         ]
       }, {
         title: 'Blue, off shoulders Bardot top, size UK10',
-        image: 'http://images.tedbakerimages.com/row%2Fc%2FPERUI-Frill-detail-Bardot-top-Mid-Blue%2FWS7W_PERUI_MID-BLUE_1.jpg.jpg?o=QaBNJ4XhJEARRvk$NV$ABdGIIRcj&V=SjPL&w=564%26h=705%26q=85',
+        image: '../src/assets/images/items/top-blue.png',
         price: 10,
 
         category: 'Tops',

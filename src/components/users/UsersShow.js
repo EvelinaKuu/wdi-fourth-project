@@ -33,27 +33,29 @@ class UsersShow extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="columns is-multiline">
-          <div className="column">
-            <div>
-
-              <Link to="/" className="button is-white"><i className="fas fa-chevron-left"></i>
+        <div className="level">
+            <Link to="/" className="button is-white"><i className="fas fa-chevron-left"></i>
                 Back to all items
-              </Link>
+            </Link>
+        </div>
 
-            </div>
-            <div className="column">
-              <h3> User: {this.state.user.username}</h3>
-              <h3> Email: {this.state.user.email}</h3>
+        <div className="columns is-multiline is-mobile">
+          <div className="column is-half">
+            <img src={this.state.user.image} className="item-image"/>
+          </div>
+          <div className="column is-half">
+            <h3> User: {this.state.user.username}</h3>
+            <h3> Email: {this.state.user.email}</h3>
+          </div>
+        </div>
 
 
-              <div className="column is-square">
-                <h3>Selling these items: </h3>
-                {this.state.user.items &&
+          <div className="columns is-multiline is-mobile">
+            <h3>Selling these items: </h3>
+            {this.state.user.items &&
                   this.state.user.items.map(item => {
                     return(
-                      <div key={item.id} >
+                      <div className="column is-third" key={item.id} >
                         <Link to={`/items/${item.id}`}>
                           <img src={item.image} className="item-image"/>
                         </Link>
@@ -61,22 +63,22 @@ class UsersShow extends React.Component {
                       </div>
                     );
                   })}
+          </div>
+
+          <div className="columns is-multiline is-mobile">
+          <h3>Liked these items: </h3>
+          {this.state.user.likes && this.state.user.likes.map(like => {
+            console.log(like);
+            return(
+              <div className="column is-third" key={like.id} >
+                s<Link to={`/items/${like.id}`}>
+                  <img src={like.image} className="item-image" />
+                </Link>
+                <p>{like.title} </p>
               </div>
-
-
-              <h3>Liked these items: </h3>
-              {this.state.user.likes && this.state.user.likes.map(like => {
-                console.log(like);
-                return(
-                  <div key={like.id} >
-                    <Link to={`/items/${like.id}`}>
-                      <img src={like.image} className="item-image" />
-                    </Link>
-                    <p>{like.title} </p>
-                  </div>
-                );
-              })}
-              {/* { Auth.isAuthenticated() &&
+            );
+          })}
+          {/* { Auth.isAuthenticated() &&
                 this.state.item.likes &&
                 this.state.item.likes.every(like => like !== Auth.getPayload().userId) &&
                 <button className="button is-white" onClick={this.likeItem} >
@@ -85,15 +87,14 @@ class UsersShow extends React.Component {
               } */}
 
 
-              { Auth.isAuthenticated() &&
-              Auth.getPayload().userId === this.state.item.createdBy
+          {/* { Auth.isAuthenticated() &&
+              Auth.getPayload().userId === 99
               <button className="button is-white" onClick={this.unlikeItem}>
                 Remove like
-              </button> }
-            </div>
-          </div>
+              </button> } */}
         </div>
-      </div>
+
+
     );
   }
 }

@@ -16,12 +16,14 @@ body {
 
 .item-image {
   object-fit: cover;
+  max-width: 200px;
+  max-height: auto;
 }
 footer {
    height: 10px;
    background-colour: #FDFDFD;
 }
-// 
+//
 // .fa-heart{
 //   height: 3px;
 // }
