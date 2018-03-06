@@ -97,24 +97,11 @@ class UsersShow extends React.Component {
                 { Auth.isAuthenticated() &&
                     Auth.getPayload().userId === this.props.match.params.id &&
                     <button className="button is-white" onClick={() => this.unlikeItem(like)}>
-                      Remove like
+                      Unlike
                     </button> }
-
               </div>
-
-
             );
           })}
-          {/* { Auth.isAuthenticated() &&
-                this.state.item.likes &&
-                this.state.item.likes.every(like => like !== Auth.getPayload().userId) &&
-                <button className="button is-white" onClick={this.likeItem} >
-                  <i className="fas fa-heart"></i>
-                </button>
-              } */}
-
-
-
         </div>
       </div>
 

@@ -150,7 +150,7 @@ User
 
     return Item
       .create([{
-        title: 'Levis jeans, size 30',
+        title: 'Levis jeans, size 26',
         image: '../src/assets/images/items/jeans-1.png',
         price: 15,
         category: 'Jeans',
@@ -179,7 +179,23 @@ User
             createdBy: users[10]._id
           }
         ]
-      }, {
+      },{ title: 'Hunter boots, size 6',
+        image: '../src/assets/images/items/hunter-black.png',
+        price: 15,
+        category: 'Shoes',
+        description: 'Black Hunter boots, used but still in a pretty good shape.',
+        createdBy: users[10]._id,
+        comments: [
+          {
+            content: 'Is there any marks on these?',
+            createdBy: users[1]._id
+          },
+          {
+            content: 'Yes, a few ones, hence the price.',
+            createdBy: users[10]._id
+          }
+        ]
+      },{
         title: 'Brown Converse shoes size 5.5',
         image: '../src/assets/images/items/brown-leather-converse.png',
         price: 25,
@@ -213,10 +229,143 @@ User
             createdBy: users[1]._id
           }
         ]
+      },{
+        title: 'Purple velvet dress, size 8',
+        image: '../src/assets/images/items/sandro-velvet-dress.png',
+        price: 40,
+        category: 'Dresses',
+        description: 'Purple velvet dress by Sandro, size 8.',
+        createdBy: users[8]._id,
+        comments: [
+          {
+            content: 'Would you say it true to size?',
+            createdBy: users[9]._id
+          },{
+            content: 'Definitely! I ware size 8 and it fits me perfectly!.',
+            createdBy: users[8]._id
+          },{
+        title: 'Leather buckle belt',
+        image: '../src/assets/images/items/leather-buckle-belt.png',
+        price: 10,
+        category: 'Other accessiories',
+        description: 'Vintage belt',
+        createdBy: users[7]._id,
+        comments: [
+          {
+            content: 'How long is the belt?',
+            createdBy: users[1]._id
+          }
+        ]
+      },{
+        title: 'Moschino dress, size M',
+        image: '../src/assets/images/items/moschino-dress.png',
+        price: 50,
+        category: 'Dresses',
+        description: 'My little pony themed dress, size M, original price 370. 100% cotton, short sleeves ',
+        createdBy: users[11]._id,
+        comments: [
+        ]
+      },{
+          title: 'Whistles leather skirt, size XS',
+          image: '../src/assets/images/items/whistles-black.png',
+          price: 50,
+          category: 'Skirts',
+          description: 'A-line weather skirt',
+          createdBy: users[8]._id,
+          comments: [
+          ]
+        },{
+          title: 'Denim skirt, size EU38',
+          image: '../src/assets/images/items/missguided-denim.png',
+          price: 10,
+          category: 'Skirts',
+          description: 'Denim skirt, high-rise, five pockets',
+          createdBy: users[7]._id,
+          comments: [
+          ]
+        },{
+          title: 'Escada check trousers, size EU38',
+          image: '../src/assets/images/items/escada-check.png',
+          price: 30,
+          category: 'Trousers',
+          description: 'Ankle-length trousers',
+          createdBy: users[7]._id,
+          comments: [
+            ]
+        },{
+          title: 'Skinny, leather trousers, size FR36',
+          image: '../src/assets/images/items/skinny.png',
+          price: 60,
+          category: 'Trousers',
+          description: 'High-waist, skinny leather trousers, press studd details on the ankles.',
+          createdBy: users[4]._id,
+          comments: [
+            {
+              content: 'Could I try these on before buying?',
+              createdBy: users[8]._id
+            }
+          ]
+      },{
+        title: 'Trench coat',
+        image: '../src/assets/images/items/trench-coat-blue.png',
+        price: 30,
+        category: 'Coats',
+        description: 'Blue trench coat. Size 8.',
+        createdBy: users[6]._id,
+        comments: [
+          {
+            content: 'What/s the brand?',
+            createdBy: users[5]._id
+          }
+        ]
+      },{
+        title: 'Brown leather bag',
+        image: '../src/assets/images/items/zara-brown.png',
+        price: 20,
+        category: 'Bags',
+        description: 'Mid-brown leather bag',
+        createdBy: users[6]._id,
+        comments: [
+          {
+            content: 'How is the inside of the bag? Any marks of tear?',
+            createdBy: users[0]._id
+          }
+        ]
+      },{
+        title: 'Vintage bucket bag',
+        image: '../src/assets/images/items/vintage-bucket-bag.png',
+        price: 20,
+        category: 'Bags',
+        description: '100% jute',
+        createdBy: users[9]._id,
+        comments: [
+        ]
+      },{
+        title: 'High UGG boots',
+        image: '../src/assets/images/items/ugg-classic.png',
+        price: 20,
+        category: 'Shoes',
+        description: 'Mid-brown, classic high Uggs. I used them for one winter, but got new ones now. Size is EU36.',
+        createdBy: users[6]._id,
+        comments: [
+        ]
+      },{
+        title: 'A Dickies fleece coat',
+        image: '../src/assets/images/items/fleece-coat-dickies.png',
+        price: 20,
+        category: 'Coats',
+        description: 'Off-white fleece coat with black-white camo details. Size M.',
+        createdBy: users[4]._id,
+        comments: [
+          {
+            content: 'Looks really nice and new! How used is it?',
+            createdBy: users[9]._id
+          }
+        ]
       },
       {
         title: 'Stiletto heels, size EU37',
-        image: 'https://images.pexels.com/photos/66856/women-s-shoes-red-pin-fashion-66856.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb',
+        image: '../src/assets/images/items/red-stilettos.png',
         price: 20,
         category: 'Shoes',
         description: 'Bought these for a wedding, but have not used them since.',
