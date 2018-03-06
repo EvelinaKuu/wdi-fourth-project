@@ -33,10 +33,11 @@ class UsersShow extends React.Component {
 
   render() {
     return (
-        <div className="level">
-            <Link to="/" className="button is-white"><i className="fas fa-chevron-left"></i>
+      <div>
+        <div className="container is-widescreen">
+          <Link to="/" className="button is-white"><i className="fas fa-chevron-left"></i>
                 Back to all items
-            </Link>
+          </Link>
         </div>
 
         <div className="columns is-multiline is-mobile">
@@ -49,10 +50,12 @@ class UsersShow extends React.Component {
           </div>
         </div>
 
+        <div className="container is-widescreen">
+          <h3>Selling these items: </h3>
+        </div>
 
-          <div className="columns is-multiline is-mobile">
-            <h3>Selling these items: </h3>
-            {this.state.user.items &&
+        <div className="columns is-multiline is-mobile">
+          {this.state.user.items &&
                   this.state.user.items.map(item => {
                     return(
                       <div className="column is-third" key={item.id} >
@@ -63,19 +66,28 @@ class UsersShow extends React.Component {
                       </div>
                     );
                   })}
-          </div>
+        </div>
 
-          <div className="columns is-multiline is-mobile">
+        {this.state.user.likes &&
+        <div className="container is-widescreen">
           <h3>Liked these items: </h3>
+        </div>
+        }
+
+        <div className="columns is-multiline is-mobile">
           {this.state.user.likes && this.state.user.likes.map(like => {
             console.log(like);
             return(
-              <div className="column is-third" key={like.id} >
-                s<Link to={`/items/${like.id}`}>
+
+
+              <div className="column is-quarter" key={like.id} >
+                <Link to={`/items/${like.id}`}>
                   <img src={like.image} className="item-image" />
                 </Link>
                 <p>{like.title} </p>
               </div>
+
+
             );
           })}
           {/* { Auth.isAuthenticated() &&
@@ -93,7 +105,7 @@ class UsersShow extends React.Component {
                 Remove like
               </button> } */}
         </div>
-
+      </div>
 
     );
   }
