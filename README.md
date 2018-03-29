@@ -30,6 +30,27 @@ Throughout the process I used a Trello board to manage the tasks. I drew wirefra
 <img width="1439" alt="screen shot 2018-02-28 at 10 03 11" src="https://user-images.githubusercontent.com/33250285/38112822-06aa5078-339b-11e8-8086-04f9fc7870f8.png">
 
 ## Technologies used
-
-
-## Dependencies
+* HTML5
+* JavaScript
+* Node.js
+* Bulma
+* Express
+* React
+* MongoDB
+* Axios
+* Bcrypt
+* Body-parser
+* Jsonwebtoken
+* Mongoose
+* Morgan
+* Chai
+* Mocha
+* Nyc
+* Filestack-react
+* Font-awesome
+* Trello
+* Heroku
+* Balsamiq
+* Github
+* Git
+* Gulp
