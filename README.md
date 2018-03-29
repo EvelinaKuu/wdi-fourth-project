@@ -18,4 +18,18 @@ A MERN stack application
 * A working API hosted somewhere on the internet
 * A link to your hosted working app in the URL section of your Github repo
 * A readme.md file
-git
+
+
+
+## Planning
+
+Throughout the process I used a Trello board to manage the tasks. I drew wireframes at the start of the planning. Examples below of Trello board and wireframes drawn using Balsamiq.
+
+<img width="800" alt="screen shot 2018-03-29 at 21 47 11" src="https://user-images.githubusercontent.com/33250285/38112788-e7d59e64-339a-11e8-84b7-38cbbfba6ff3.png">
+
+<img width="1439" alt="screen shot 2018-02-28 at 10 03 11" src="https://user-images.githubusercontent.com/33250285/38112822-06aa5078-339b-11e8-8086-04f9fc7870f8.png">
+
+## Technologies used
+
+
+## Dependencies
