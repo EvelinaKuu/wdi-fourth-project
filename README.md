@@ -2,6 +2,7 @@
 
 # Pre-loved - West London
 
+This is the link to my project on [Heroku](https://preloved-westlondon.herokuapp.com/)
 This is my final project (4/4) for General Assembly's Web Developer Immersive course.
 A MERN stack application
 
@@ -19,18 +20,18 @@ A MERN stack application
 * A link to your hosted working app in the URL section of your Github repo
 * A readme.md file
 
+## Overview
+
+An app to sell your fashion pieces in West London. Without logging in you can see all the items for sale, while logged in your able to ask questions and make an offer by commenting on it and add your items for sale.
+
+## Screenshots of the app
 
 
-## Planning
 
-Throughout the process I used a Trello board to manage the tasks. I drew wireframes at the start of the planning. Examples below of Trello board and wireframes drawn using Balsamiq.
-
-<img width="800" alt="screen shot 2018-03-29 at 21 47 11" src="https://user-images.githubusercontent.com/33250285/38112788-e7d59e64-339a-11e8-84b7-38cbbfba6ff3.png">
-
-<img width="1439" alt="screen shot 2018-02-28 at 10 03 11" src="https://user-images.githubusercontent.com/33250285/38112822-06aa5078-339b-11e8-8086-04f9fc7870f8.png">
 
 ## Technologies used
 * HTML5
+* CSS & SCSS
 * JavaScript
 * Node.js
 * Bulma
@@ -54,3 +55,12 @@ Throughout the process I used a Trello board to manage the tasks. I drew wirefra
 * Github
 * Git
 * Gulp
+
+
+## Planning
+
+Throughout the process I used a Trello board to manage the tasks. I drew wireframes at the start of the planning. Examples below of Trello board and wireframes drawn using Balsamiq.
+
+<img width="800" alt="screen shot 2018-03-29 at 21 47 11" src="https://user-images.githubusercontent.com/33250285/38112788-e7d59e64-339a-11e8-84b7-38cbbfba6ff3.png">
+
+<img width="1439" alt="screen shot 2018-02-28 at 10 03 11" src="https://user-images.githubusercontent.com/33250285/38112822-06aa5078-339b-11e8-8086-04f9fc7870f8.png">
