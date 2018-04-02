@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import ItemsRoutes from './components/items/ItemsRoutes';
 import ProtectedRoute from './components/utility/ProtectedRoute';
@@ -10,9 +10,9 @@ import Register    from './components/auth/Register';
 import Navbar      from './components/utility/Navbar';
 import ImageHeroBox from './components/utility/ImageHeroBox';
 
-
-import './scss/style.scss';
 import 'bulma/css/bulma.css';
+import './scss/style.scss';
+
 
 
 class App extends React.Component {

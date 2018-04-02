@@ -3,6 +3,11 @@ body {
   background-color: #FDFDFD;
 
 }
+
+.title {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
 .container {
    min-height: 100%;
    margin-bottom: -100px;
@@ -15,7 +20,11 @@ body {
 }
 .hero-body {
   box-sizing: inherit;
+}
 
+
+section h1, h2 {
+  color: #C71585;
 }
 
 .hero {
@@ -39,7 +48,3 @@ footer {
    height: 10px;
    background-colour: #FDFDFD;
 }
-//
-// .fa-heart{
-//   height: 3px;
-// }

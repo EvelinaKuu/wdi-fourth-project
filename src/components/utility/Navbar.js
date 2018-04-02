@@ -13,7 +13,7 @@ const Navbar = ({ history }) => {
     <div>
       <nav className="level">
         <div className="navbar level-left">
-          <Link to="/" className="title is-3">Pre-loved</Link>
+          <Link to="/" className="title">Pre-loved</Link>
         </div>
         <div className="navbar level-right">
           { !Auth.isAuthenticated() &&
