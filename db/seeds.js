@@ -402,7 +402,7 @@ User
         ]
       },{
         title: 'Brown leather bag',
-        image: '/assets/images/items/zara-brown.png',
+        image: '../src/assets/images/items/zara-brown.png',
         price: 20,
         category: 'Bags',
         description: 'Mid-brown leather bag',
