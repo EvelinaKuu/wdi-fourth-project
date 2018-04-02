@@ -113,8 +113,8 @@ class ItemsShow extends React.Component {
         <div className="column">
           <h3>{this.state.item.title}</h3>
           <h3>Price: £{this.state.item.price}</h3>
-          <h3>Category:{this.state.item.category}</h3>
-          <h4>Description of the item:{this.state.item.description}</h4>
+          <h3>Category: {this.state.item.category}</h3>
+          <h4>Description of the item: {this.state.item.description}</h4>
           {this.state.item.createdBy && <p><a href={`mailto:${this.state.item.createdBy.email}`}>Send email to seller</a></p>}
 
           {this.state.item.createdBy && <h4>Sold by: <Link to={`/users/${this.state.item.createdBy.id}`}>{this.state.item.createdBy.username}</Link></h4>}
