@@ -167,6 +167,88 @@ User
           }
         ]
       },{
+        title: 'Ankle boots, size 7',
+        image: '/assets/images/items/ankle-boots-raid.png',
+        price: 20,
+        category: 'Shoes',
+        description: 'Leather Raid ankle boots, used just a couple of times, like new.',
+        createdBy: users[6]._id,
+        comments: [
+          {
+            content: 'Any marks on these?',
+            createdBy: users[5]._id
+          }
+        ]
+      },{
+        title: 'Palladium boots, size 7.5',
+        image: '/assets/images/items/palladium-black.png',
+        price: 12,
+        category: 'Shoes',
+        description: 'Black Palladium boots. Worn for one fall.',
+        createdBy: users[2]._id,
+        comments: [
+          {
+            content: 'Could you post a photo showing any marks on them?',
+            createdBy: users[5]._id
+          }
+        ]
+      },{
+        title: 'Pleated pants',
+        image: '/assets/images/items/pleats.png',
+        price: 15,
+        category: 'Trousers',
+        description: 'Greenish pleated wide leg pants. Bought from H&M.',
+        createdBy: users[7]._id,
+        comments: [
+          {
+            content: 'Are they green or more brown?',
+            createdBy: users[8]._id
+          }
+        ]
+      },{
+        title: 'Pleated pants EU36',
+        image: '/assets/images/items/check.png',
+        price: 15,
+        category: 'Trousers',
+        description: 'Check trousers, 100% cotton.',
+        createdBy: users[7]._id,
+        comments: [
+          {
+            content: 'Which UK size would you say these are?',
+            createdBy: users[8]._id
+          }
+        ]
+      },{
+        title: 'Dr Martens, sixe 6',
+        image: '/assets/images/items/dr-martens.png',
+        price: 15,
+        category: 'Shoes',
+        description: 'Black leather drmartens, never used, bought wrong size.',
+        createdBy: users[1]._id,
+        comments: [
+          {
+            content: 'I want to buy these! I will send you an email.',
+            createdBy: users[6]._id
+          },
+          {
+            content: 'Great!',
+            createdBy: users[1]._id
+          }
+        ]
+      },{
+        title: 'New Timberland boots',
+        image: '/assets/images/items/timberland-beige.png',
+        price: 15,
+        category: 'Shoes',
+        description: 'Unworn Beige Timberland boots.',
+        createdBy: users[7]._id,
+        comments: [
+          {
+            content: 'I think you forgot to post which size these are :)',
+            createdBy: users[8]._id
+          }
+        ]
+      },{
         title: 'Levis jeans, size 30',
         image: '/assets/images/items/black-levis.png',
         price: 17,

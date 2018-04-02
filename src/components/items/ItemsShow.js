@@ -114,11 +114,10 @@ class ItemsShow extends React.Component {
           <h3>{this.state.item.title}</h3>
           <h3>Price: £{this.state.item.price}</h3>
           <h3>Category: {this.state.item.category}</h3>
-          <h4>Description of the item: {this.state.item.description}</h4>
-          {this.state.item.createdBy && <p><a href={`mailto:${this.state.item.createdBy.email}`}>Send email to seller</a></p>}
-
+          <h3>Description of the item: {this.state.item.description}</h3>
           {this.state.item.createdBy && <h4>Sold by: <Link to={`/users/${this.state.item.createdBy.id}`}>{this.state.item.createdBy.username}</Link></h4>}
-
+          {this.state.item.createdBy && <p><a href={`mailto:${this.state.item.createdBy.email}`}>Send email to seller</a></p>}
+          <h3>Comments:</h3>
           {this.state.item.comments && this.state.item.comments.map(comment => {
             return(
               <div key={comment._id} >
@@ -133,6 +132,7 @@ class ItemsShow extends React.Component {
 
             );
           })}
+
           <CommentForm
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
