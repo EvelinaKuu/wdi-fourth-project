@@ -5,10 +5,10 @@ const ImageHeroBox = () => {
     <section className="hero" style={{ backgroundImage: 'url("../assets/images/hero.jpg")'}}>
       <div className="hero-body">
         <div className="container">
-          <h1 className="herotitle title is-1">
+          <h1 className="title is-1 herotitle">
             Pre-loved
           </h1>
-          <h2 className="herotitle subtitle is-3">
+          <h2 className="subtitle is-3 herotitle">
             Pre-loved fashion items for sale in West London
           </h2>
         </div>

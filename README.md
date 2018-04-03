@@ -15,7 +15,7 @@ A MERN stack application
 * Consume your own API by making your front-end app with React
 * Add authentication to your API to restrict access to appropriate users
 * Layout and style your front-end with clean & well-formatted CSS
-* Deploy your application online so it's publically accessible
+* Deploy your application online so it's publicly accessible
 * A working API hosted somewhere on the internet
 * A link to your hosted working app in the URL section of your Github repo
 * A readme.md file
