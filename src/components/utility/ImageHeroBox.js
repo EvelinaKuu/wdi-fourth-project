@@ -2,14 +2,14 @@ import React from 'react';
 
 const ImageHeroBox = () => {
   return (
-    <section className="hero" style={{ backgroundImage: 'url("../assets/images/hero.jpg")'}}>
+    <section className="hero" style={{ backgroundImage: 'url("../assets/images/hero2.jpg")'}}>
       <div className="hero-body">
         <div className="container">
-          <h1 className="title is-1 herotitle">
-            Pre-loved
+          <h1 className="title">
+            Pre-loved - West London
           </h1>
-          <h2 className="subtitle is-3 herotitle">
-            Pre-loved fashion items for sale in West London
+          <h2 className="subtitle">
+            Pre-loved fashion pieces for sale in West London
           </h2>
         </div>
       </div>

@@ -330,7 +330,7 @@ User
         title: 'Leather buckle belt',
         image: '/assets/images/items/leather-buckle-belt.png',
         price: 10,
-        category: 'Other accessiories',
+        category: 'Other accessories',
         description: 'Vintage belt',
         createdBy: users[7]._id,
         comments: [
@@ -402,7 +402,7 @@ User
         ]
       },{
         title: 'Brown leather bag',
-        image: '../src/assets/images/items/zara-brown.png',
+        image: '/assets/images/items/zara-brown.png',
         price: 20,
         category: 'Bags',
         description: 'Mid-brown leather bag',
