@@ -10,17 +10,17 @@ import ItemsIndex from '../../../src/components/items/ItemsIndex';
 
 const itemData = [{
   id: 1,
-  title: 'Light blue jeans, Levi/s, size 30',
-  image: 'jeans.jpg',
+  title: 'Levis jeans, size 26',
+  image: '/assets/images/items/jeans-1.png',
+  price: 15,
   category: 'Jeans',
-  description: 'flsköl'
+  description: 'Light blue jeans, never used, bought wrong size.'
 }, {
-  id: 2,
-  title: 'Brown Converse shoes size 5.5',
-  image: 'converse.jpg',
-  category: 'Tops',
-  description: 'Worn once!'
-
+  title: 'Ankle boots, size 7',
+  image: '/assets/images/items/ankle-boots-raid.png',
+  price: 20,
+  category: 'Shoes',
+  description: 'Leather Raid ankle boots, used just a couple of times, like new.'
 }];
 describe('ItemsIndex tests', () => {
   let wrapper = null;
@@ -65,7 +65,7 @@ describe('ItemsIndex tests', () => {
       done();
     });
   });
-  it('should display the add food button when logged in', done => {
+  it('should display the add item button when logged in', done => {
     window.localStorage.setItem('token', 'FAKETOKEN');
     promise.then(() => {
       wrapper.update();
@@ -74,7 +74,7 @@ describe('ItemsIndex tests', () => {
       done();
     });
   });
-  it('should not display the add food button when not logged in', done => {
+  it('should not display the add item button when not logged in', done => {
     promise.then(() => {
       wrapper.update();
       expect(wrapper.find('a.main-button').length).to.eq(0);

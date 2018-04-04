@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90% </span>
+        <span class="strong">76% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/10</span>
+        <span class='fraction'>19/25</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90% </span>
+        <span class="strong">78.26% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/10</span>
+        <span class='fraction'>18/23</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -87,14 +87,75 @@
 42
 43
 44
-45</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -107,6 +168,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,6 +180,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,12 +202,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 &nbsp;
 import Auth from '../../lib/Auth';
 &nbsp;
+import SortingBar from '../utility/SortingBar';
+&nbsp;
 class ItemsIndex extends React.Component {
   state = {
-    items: []
+    items: [],
+    sortBy: 'price',
+    sortDirection: 'asc',
+    query: ''
+&nbsp;
+  }
+&nbsp;
+  handleSort = (e) =&gt; <span class="cstat-no" title="statement not covered" >{</span>
+    const [sortBy, sortDirection] = <span class="cstat-no" title="statement not covered" >e.target.value.split('|');</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({ sortBy, sortDirection });</span>
+  }
+&nbsp;
+  handleSearch = (e) =&gt; {
+    // console.log(e.target.value);
+<span class="cstat-no" title="statement not covered" >    this.setState({query: e.target.value}, <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; console.log(this.state) );</span></span></span>
+  }
+&nbsp;
+  sorting = () =&gt; {
+    const { sortBy, sortDirection, query } = this.state;
+    const regex = new RegExp(query, 'i');
+    const orderedProducts = _.orderBy(this.state.items, [sortBy], [sortDirection]);
+    const products = _.filter(orderedProducts, (item) =&gt; regex.test(item.category));
+&nbsp;
+    return products;
+&nbsp;
   }
 &nbsp;
   componentWillMount() {
@@ -150,24 +245,31 @@ class ItemsIndex extends React.Component {
   }
 &nbsp;
   render() {
+    const products = this.sorting();
     return (
-      &lt;div&gt;
-        &lt;div className="row"&gt;
-          &lt;div className="page-banner col-md-12"&gt;
-            { Auth.isAuthenticated() &amp;&amp; &lt;Link to="/items/new" className="main-button"&gt;
-              &lt;i className="fa fa-plus" aria-hidden="true"&gt;&lt;/i&gt;Add Item
-            &lt;/Link&gt;
-            }
-          &lt;/div&gt;
-          {this.state.items.map(item =&gt; {
-            return(
-              &lt;div key={item.id} className="image-tile col-md-4 col-sm-6 col-xs-12"&gt;
+      &lt;div className="container"&gt;
+        &lt;SortingBar
+          handleSort={this.handleSort}
+          handleSearch={this.handleSearch}
+        /&gt;
+        &lt;div className="columns is-multiline"&gt;
+&nbsp;
+&nbsp;
+          {products.map(item =&gt; {
+&nbsp;
+            return(&lt;div key={item.id} className="column is-one-quarter"&gt;
+              &lt;figure className="image is-square"&gt;
                 &lt;Link to={`/items/${item.id}`}&gt;
-                  &lt;img src={item.image} className="img-responsive" /&gt;
+                  &lt;img src={item.image} className="item-image" /&gt;
                 &lt;/Link&gt;
-              &lt;/div&gt;
-            );
+              &lt;/figure&gt;
+            &lt;/div&gt;);
+&nbsp;
           })}
+&nbsp;
+          { Auth.isAuthenticated() &amp;&amp; &lt;Link to="/items/new" className="standard-button"&gt;&lt;i className="fas fa-plus"&gt;&lt;/i&gt; Add your item for sale
+          &lt;/Link&gt;
+          }
         &lt;/div&gt;
       &lt;/div&gt;
     );
@@ -181,7 +283,7 @@ export default ItemsIndex;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Feb 26 2018 14:32:13 GMT+0000 (GMT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 04 2018 15:37:52 GMT+0100 (BST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -25,7 +25,7 @@ function ItemsForm({ handleSubmit, handleChange, item, errors }) {
           {errors.title && <small>{errors.title}</small>}
         </div>
         <div className="field">
-          <label htmlFor="price">Price</label>
+          <label htmlFor="price" className="label">Price</label>
           <input
             type="number"
             className="input"
@@ -61,7 +61,7 @@ function ItemsForm({ handleSubmit, handleChange, item, errors }) {
           </div>
         </div>
         <div className="field">
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description" className="label">Description</label>
           <textarea
             type="text"
             className="textarea"
@@ -75,7 +75,7 @@ function ItemsForm({ handleSubmit, handleChange, item, errors }) {
           {errors.description && <small>{errors.description}</small>}
         </div>
         <div className="field">
-          <label htmlFor="image">Image</label>
+          <label htmlFor="image" className="label">Image</label>
           <input
             type="text"
             className="input"
