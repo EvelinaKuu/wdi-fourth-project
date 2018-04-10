@@ -457,9 +457,9 @@ User
   .then((items) => {
     console.log(`${items.length} items created!`);
   })
-  .catch((err) => {
-    console.log(err);
-  })
   .finally(() => {
     mongoose.connection.close();
+  })
+  .catch((err) => {
+    console.log(err);
   });

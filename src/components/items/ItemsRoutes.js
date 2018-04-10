@@ -12,9 +12,9 @@ const ItemsRoutes = () => {
   return (
     <Switch>
       <Route exact path="/" component={ItemsIndex} />
-      <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
-      <ProtectedRoute path="/items/new" component={ItemsNew} />
       <Route path="/items/:id" component={ItemsShow} />
+      <ProtectedRoute path="/items/new" component={ItemsNew} />
+      <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
     </Switch>
   );
 };

@@ -43,11 +43,10 @@ class ItemsShow extends React.Component {
   }
 
     handleChange = ({ target: { value }}) => {
-      this.setState({ newComment: { content: value }}, () => console.log(this.state.newComment));
+      this.setState({ newComment: { content: value }});
     }
 
     handleSubmit = e => {
-      // console.log('handleSubmit works');
       e.preventDefault();
       Axios
         .post(`/api/items/${this.state.item.id}/comments`, this.state.newComment,
@@ -83,9 +82,11 @@ class ItemsShow extends React.Component {
               <p>Likes: { this.state.item.likes && this.state.item.likes.length } </p>
               <div className="field is-grouped">
                 <BackButton history={this.props.history} />
-                { Auth.isAuthenticated() && <Link to={`/items/${this.state.item.id}/edit`} className="button is-white">
-                  <i className="fas fa-pencil" aria-hidden="true"></i>Edit
-                </Link> }
+                { Auth.isAuthenticated() &&
+                  
+                  <Link to={`/items/${this.state.item.id}/edit`} className="button is-white">
+                    <i className="fas fa-pencil" aria-hidden="true"></i>Edit
+                  </Link> }
                 {' '}
                 { Auth.isAuthenticated() && <button className="button is-white" onClick={this.deleteItem}>
                   <i className="fa fa-trash" aria-hidden="true"></i>Delete
