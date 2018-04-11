@@ -74,6 +74,11 @@ class ItemsShow extends React.Component {
           .catch(err => console.log(err));
       }
       render() {
+        // might need this?
+        // const myItem = Auth.getPayload().userId === this.props.match.params.id.createdBy;
+        let isCurrentUsers = null;
+        if (Auth.isAuthenticated() && this.state.item.createdBy) isCurrentUsers = Auth.getPayload().userId === this.state.item.createdBy.id;
+
         console.log(this.state.item.likes);
         return (
           <div className="columns">
@@ -82,13 +87,15 @@ class ItemsShow extends React.Component {
               <p>Likes: { this.state.item.likes && this.state.item.likes.length } </p>
               <div className="field is-grouped">
                 <BackButton history={this.props.history} />
-                { Auth.isAuthenticated() &&
-                  
+                { Auth.isAuthenticated() && isCurrentUsers &&
+
                   <Link to={`/items/${this.state.item.id}/edit`} className="button is-white">
                     <i className="fas fa-pencil" aria-hidden="true"></i>Edit
                   </Link> }
                 {' '}
-                { Auth.isAuthenticated() && <button className="button is-white" onClick={this.deleteItem}>
+                { Auth.isAuthenticated() && isCurrentUsers &&
+
+                <button className="button is-white" onClick={this.deleteItem}>
                   <i className="fa fa-trash" aria-hidden="true"></i>Delete
                 </button> }
                 { Auth.isAuthenticated() &&
@@ -112,10 +119,11 @@ class ItemsShow extends React.Component {
                 return(
                   <div key={comment._id} >
                     <p>{comment.content} </p>
-                    <p>{comment.createdBy.username} </p>
+                    <p>{'-' + comment.createdBy.username} </p>
+                    { Auth.isAuthenticated() && Auth.getPayload().userId === comment.createdBy.id &&
                     <button className="button is-white" onClick={() => this.deleteComment(comment._id)}>
                       <i className="fa fa-trash" aria-hidden="true"></i>
-                    </button>
+                    </button>}
                   </div>
                 );
               })}
