@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SortingBar = ({ handleSort, handleSearch }) => {
 
   return(

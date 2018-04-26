@@ -16,7 +16,6 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           />
         </div>
       </div>
-
       <div className="field">
         <div className="label">Password</div>
         <div className="control">

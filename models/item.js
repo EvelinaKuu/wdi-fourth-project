@@ -28,7 +28,6 @@ itemSchema.methods.belongsTo = function belongsTo(user) {
   // 'this' is the instance of the item that we are calling the 'belongsTo' method on
   // user is the user object that we will pass this method /the user who is logged in
   return this.createdBy.id === user.id;
-
 };
 
 itemSchema.set('toJSON', {

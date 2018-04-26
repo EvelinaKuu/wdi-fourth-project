@@ -13,15 +13,12 @@ class ItemsShow extends React.Component {
       content: ''
     }
   }
-
   componentDidMount() {
     Axios
       .get(`/api/items/${this.props.match.params.id}`)
       .then(res => this.setState({ item: res.data }))
       .catch(err => console.log(err));
   }
-
-
   likeItem = () => {
     Axios
       .post(`/api/items/${this.props.match.params.id}/like`, {}, {
@@ -31,7 +28,6 @@ class ItemsShow extends React.Component {
       // check if the currentUser is logged in and if his likes is in the array of likes hide button
       .catch(err => console.log(err));
   }
-
   deleteItem = () => {
     Axios
       .delete(`/api/items/${this.props.match.params.id}`,
@@ -41,7 +37,6 @@ class ItemsShow extends React.Component {
       .then(() => this.props.history.push('/'))
       .catch(err => console.log(err));
   }
-
     handleChange = ({ target: { value }}) => {
       this.setState({ newComment: { content: value }});
     }
@@ -74,8 +69,6 @@ class ItemsShow extends React.Component {
           .catch(err => console.log(err));
       }
       render() {
-        // might need this?
-        // const myItem = Auth.getPayload().userId === this.props.match.params.id.createdBy;
         let isCurrentUsers = null;
         if (Auth.isAuthenticated() && this.state.item.createdBy) isCurrentUsers = Auth.getPayload().userId === this.state.item.createdBy.id;
 

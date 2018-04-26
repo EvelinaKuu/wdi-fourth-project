@@ -4,7 +4,6 @@ import Axios from 'axios';
 import ItemsForm from './ItemsForm';
 import Auth from '../../lib/Auth';
 
-
 class ItemsEdit extends React.Component {
   state = {
     item: {
@@ -23,13 +22,11 @@ class ItemsEdit extends React.Component {
       .then(res => this.setState({ item: res.data }))
       .catch(err => console.log(err));
   }
-
   handleChange = ({ target: { name, value } }) => {
     const item = Object.assign({}, this.state.item, { [name]: value });
     const errors = Object.assign({}, this.state.errors, { [name]: '' });
     this.setState({ item, errors });
   }
-
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -41,7 +38,6 @@ class ItemsEdit extends React.Component {
       .then(res => this.props.history.push(`/items/${res.data.id}`))
       .catch(err => this.setState({ errors: err.response.data.errors }));
   }
-
   render() {
     return (
       <ItemsForm

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors}) => {
-
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
 
   return (
@@ -20,8 +19,6 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors}) => {
           {errors.firstname && <small>{errors.firstname}</small>}
         </div>
       </div>
-
-
       <div className="field">
         <div className="label">Last Name</div>
         <div className="control">
@@ -36,8 +33,6 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors}) => {
           {errors.lastname && <small>{errors.lastname}</small>}
         </div>
       </div>
-
-
       <div className="field">
         <div className="label">Username</div>
         <div className="control">

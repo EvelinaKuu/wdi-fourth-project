@@ -3,9 +3,7 @@ import React from 'react';
 import BackButton from '../utility/BackButton';
 
 function ItemsForm({ handleSubmit, handleChange, item, errors }) {
-
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
-
   return (
     <div>
       <div>
